@@ -15,7 +15,7 @@ import {
 
 function DesktopFloatingElements() {
   return (
-    <div className="absolute inset-0 hidden lg:block">
+    <div className="absolute inset-y-0 left-1/2 hidden w-full max-w-[110rem] -translate-x-1/2 lg:block">
       <Floating className="top-[13%] left-[2%] xl:top-[15%] xl:left-[4%]" delay={0.6} duration={7} rotate={-4}>
         <div className="origin-top-left scale-80 xl:scale-100">
           <BrowserCard />
@@ -30,10 +30,10 @@ function DesktopFloatingElements() {
       <Floating className="top-[52%] right-[3%] xl:right-[6%]" delay={1.05} duration={7} rotate={6}>
         <PhoneCard />
       </Floating>
-      <Floating className="bottom-[5%] left-[9%] hidden xl:block" delay={1.2} duration={6.5} rotate={-3}>
+      <Floating className="bottom-[3%] left-[9%] hidden xl:block min-[90rem]:left-[12%]" delay={1.2} duration={6.5} rotate={-3}>
         <ProjectMiniCard />
       </Floating>
-      <Floating className="right-[4%] bottom-[4%] hidden xl:block" delay={1.3} duration={7.5} rotate={2}>
+      <Floating className="right-[6%] bottom-[4%] hidden xl:block min-[90rem]:right-[8%]" delay={1.3} duration={7.5} rotate={2}>
         <DashboardCard />
       </Floating>
     </div>
@@ -59,7 +59,7 @@ export function Hero() {
     <section
       id={SECTION_IDS.top}
       aria-labelledby="hero-title"
-      className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-16 lg:min-h-[max(100svh,52rem)] lg:pt-24"
+      className="relative overflow-hidden pt-28 pb-16 lg:pt-38 lg:pb-20"
     >
       <DesktopFloatingElements />
 
