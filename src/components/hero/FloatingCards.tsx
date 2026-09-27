@@ -92,7 +92,7 @@ export function MessageBubble() {
   return (
     <div className="flex max-w-60 items-start gap-2">
       <span className="grid size-8 shrink-0 place-items-center rounded-full bg-accent">
-        <MessageCircle className="size-4" />
+        <MessageCircle className="size-4 dark:text-accent-ink" />
       </span>
       <div className="rounded-2xl rounded-tl-md bg-surface px-3.5 py-2.5 text-[0.8rem] leading-snug font-medium shadow-float ring-1 ring-ink/5 dark:ring-ink/10">
         ¡Hola! Quiero una web para mi negocio 👋
