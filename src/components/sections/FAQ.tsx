@@ -11,7 +11,7 @@ const accordionItems = faqItems.map((item) => ({ id: item.id, title: item.questi
 
 export function FAQ() {
   return (
-    <section id={SECTION_IDS.faq} aria-labelledby="faq-title" className="section-y">
+    <section id={SECTION_IDS.faq} aria-labelledby="faq-title" className="section-y bg-surface">
       <div className="container-page grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">

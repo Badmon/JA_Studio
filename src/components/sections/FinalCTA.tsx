@@ -11,7 +11,7 @@ const contactLink =
 
 export function FinalCTA() {
   return (
-    <section id={SECTION_IDS.contact} aria-labelledby="cta-title" className="px-2 pb-2 sm:px-4 sm:pb-4">
+    <section id={SECTION_IDS.contact} aria-labelledby="cta-title" className="p-4 sm:p-8">
       <motion.div
         className="relative overflow-hidden rounded-[2rem] bg-contrast text-white sm:rounded-[3rem] dark:ring-1 dark:ring-white/10 dark:ring-inset"
         initial="hidden"

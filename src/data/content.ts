@@ -2,7 +2,7 @@
  * Textos de las secciones del sitio.
  * Edita este archivo para cambiar títulos, párrafos y botones sin tocar los componentes.
  */
-import { PROJECTS_HREF, SITE } from './siteConfig'
+import { PROJECTS_HREF } from './siteConfig'
 
 export const heroContent = {
   /** Cada elemento es una línea del titular. */
@@ -33,14 +33,14 @@ export const aboutContent = {
   eyebrow: 'Sobre mí',
   title: 'Hola, soy Juan',
   paragraphs: [
-    'Soy desarrollador y me especializo en convertir ideas y necesidades de negocio en soluciones digitales modernas, funcionales y fáciles de utilizar.',
-    'Más allá del código, me interesa entender qué necesita realmente cada proyecto y construir una solución que tenga sentido para las personas que la van a utilizar.',
+    'Creo experiencias digitales que ayudan a negocios y empresas a comunicar mejor, organizarse y crecer.',
+    'Me gusta trabajar desde la idea inicial, entender qué se quiere lograr y convertirlo en una solución sencilla, profesional y fácil de utilizar.',
   ],
   cta: 'Conocer más',
 }
 
 export const technologiesContent = {
-  title: 'Tecnología detrás de cada proyecto',
+  title: 'Empresas con las que he colaborado',
   items: [
     'React',
     'TypeScript',

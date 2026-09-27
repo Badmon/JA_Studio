@@ -1,5 +1,5 @@
 import { MotionConfig } from 'framer-motion'
-import { SHOW_PROJECT_GALLERY } from './data/siteConfig'
+import { SHOW_COMPANIES, SHOW_PROJECT_GALLERY } from './data/siteConfig'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
 import { About } from './components/sections/About'
@@ -24,7 +24,7 @@ export default function App() {
         <Process />
         <Testimonials />
         <About />
-        <Technologies />
+        {SHOW_COMPANIES && <Technologies />}
         <FAQ />
         <FinalCTA />
       </main>

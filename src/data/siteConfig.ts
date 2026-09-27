@@ -65,6 +65,13 @@ export const SECTION_IDS = {
 export const SHOW_PROJECT_GALLERY = true
 
 /**
+ * Muestra u oculta la franja "Empresas con las que he colaborado" (entre "Sobre mí" y FAQ).
+ * Desactivada hasta tener empresas que mostrar: cámbiala a true y reemplaza los elementos
+ * de `technologiesContent.items` en src/data/content.ts.
+ */
+export const SHOW_COMPANIES = false
+
+/**
  * Destino del enlace "Proyectos" (navbar, footer y botón "Ver proyectos" del hero).
  * Si la galería está oculta, el enlace desaparece.
  */

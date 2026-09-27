@@ -46,7 +46,7 @@ export function Accordion({ items, defaultOpenId }: AccordionProps) {
                   aria-hidden="true"
                   className={cn(
                     'grid size-10 shrink-0 place-items-center rounded-full transition-colors duration-300',
-                    isOpen ? 'bg-ink text-ink-inverse' : 'bg-surface text-ink group-hover:bg-accent group-hover:text-accent-ink',
+                    isOpen ? 'bg-ink text-ink-inverse' : 'bg-surface-muted text-ink group-hover:bg-accent group-hover:text-accent-ink',
                   )}
                 >
                   <Plus
