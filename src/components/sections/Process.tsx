@@ -39,7 +39,7 @@ export function Process() {
 
           <motion.ol
             ref={timelineRef}
-            className="relative grid gap-10 pl-12 lg:grid-cols-6 lg:gap-6 lg:pt-14 lg:pl-0"
+            className="relative grid gap-7 pl-12 lg:grid-cols-6 lg:gap-6 lg:pt-14 lg:pl-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
@@ -54,8 +54,8 @@ export function Process() {
                   <span className="size-2 rounded-full bg-ink" />
                 </span>
                 <p className="text-sm font-extrabold text-ink-muted">{step.number}</p>
-                <h3 className="mt-2 text-xl font-extrabold tracking-tight lg:text-[1.35rem]">{step.title}</h3>
-                <p className="mt-2 text-[1.0625rem] text-ink-soft lg:text-base">{step.description}</p>
+                <h3 className="mt-1 text-xl leading-tight font-extrabold tracking-tight lg:text-[1.35rem]">{step.title}</h3>
+                <p className="mt-1 text-[1.0625rem] text-ink-soft lg:text-base">{step.description}</p>
               </motion.li>
             ))}
           </motion.ol>
