@@ -1,4 +1,4 @@
-import { NAV_LINKS, SECTION_IDS, SITE } from '../../data/siteConfig'
+import { NAV_LINKS, SECTION_IDS } from '../../data/siteConfig'
 import { socialLinks } from '../../data/socialLinks'
 import { isExternalHref } from '../../lib/cn'
 import { Logo } from '../ui/Logo'
@@ -62,7 +62,7 @@ export function Footer() {
             {/* El año se toma de la fecha actual del visitante: se actualiza solo cada año. */}
             © {new Date().getFullYear()}. Todos los derechos reservados.
           </p>
-          <p>Diseñado y desarrollado por {SITE.name}</p>
+          <p>Lima, Perú</p>
         </div>
       </div>
     </footer>
