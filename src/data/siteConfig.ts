@@ -19,7 +19,6 @@ export const SITE = {
   url: '',
   description:
     'Diseño y desarrollo páginas web, sistemas y soluciones digitales para negocios y empresas.',
-  year: 2026,
   /**
    * Fotografía de perfil (sección "Sobre mí" y bloque de contacto).
    * El archivo vive en /public/images, así que se publica junto al sitio en Netlify.

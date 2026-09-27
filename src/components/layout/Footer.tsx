@@ -59,7 +59,8 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 pt-8 text-sm text-ink-muted sm:flex-row sm:justify-between">
           <p>
-            © {SITE.year} {SITE.name}. Todos los derechos reservados.
+            {/* El año se toma de la fecha actual del visitante: se actualiza solo cada año. */}
+            © {new Date().getFullYear()}. Todos los derechos reservados.
           </p>
           <p>Diseñado y desarrollado por {SITE.name}</p>
         </div>
