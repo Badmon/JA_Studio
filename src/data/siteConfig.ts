@@ -8,7 +8,7 @@ export const SITE = {
   name: 'Juan Antonio León',
   /** Nombre corto para saludos (por ejemplo, en el mensaje de WhatsApp). */
   firstName: 'Juan',
-  title: 'Desarrollador Web & Soluciones Digitales',
+  title: 'Soluciones Digitales',
   email: 'jantoleonh@gmail.com',
   /** Teléfono tal como se muestra en pantalla. */
   phoneDisplay: '+51 928 357 588',
@@ -33,7 +33,7 @@ export const SITE = {
 } as const
 
 /** Título completo de la página (pestaña del navegador, Google y redes sociales). */
-export const SITE_TITLE = `${SITE.name} — ${SITE.title}`
+export const SITE_TITLE = `JL | ${SITE.title}`
 
 /**
  * Número de WhatsApp en formato internacional: código de país + número, solo dígitos.
