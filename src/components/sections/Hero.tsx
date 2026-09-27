@@ -69,14 +69,6 @@ export function Hero() {
         animate="visible"
         variants={stagger(0.12, 0.1)}
       >
-        <motion.p
-          variants={fadeUp}
-          className="mb-8 inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold shadow-soft"
-        >
-          <span aria-hidden="true" className="size-2 rounded-full bg-accent ring-4 ring-accent/30" />
-          {heroContent.eyebrow}
-        </motion.p>
-
         <motion.h1 id="hero-title" className="text-hero mx-auto" variants={stagger(0.1)}>
           {heroContent.titleLines.map((line) => (
             <span key={line} className="-mb-[0.1em] block overflow-hidden pb-[0.1em]">

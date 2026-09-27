@@ -5,7 +5,6 @@
 import { PROJECTS_HREF, SITE } from './siteConfig'
 
 export const heroContent = {
-  eyebrow: 'Disponible para nuevos proyectos',
   /** Cada elemento es una línea del titular. */
   titleLines: ['Creo soluciones', 'digitales que hacen', 'crecer tu negocio.'],
   subtitle:

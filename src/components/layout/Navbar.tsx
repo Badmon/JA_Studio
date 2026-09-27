@@ -59,7 +59,7 @@ export function Navbar() {
       >
         <Logo onClick={closeMenu} />
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="mr-3 ml-auto hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
