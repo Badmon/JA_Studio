@@ -16,7 +16,7 @@ export const SITE = {
    * URL pública del sitio, sin barra final (por ejemplo 'https://juanantonioleon.com').
    * Cuando la tengas, escríbela aquí: se usará para la URL canónica y las etiquetas Open Graph.
    */
-  url: '',
+  url: 'https://jleonh.netlify.app',
   description:
     'Diseño y desarrollo páginas web, sistemas y soluciones digitales para negocios y empresas.',
   /**
