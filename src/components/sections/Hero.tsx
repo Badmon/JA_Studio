@@ -27,7 +27,7 @@ function DesktopFloatingElements() {
       <Floating className="top-[58%] left-[2%] hidden xl:block" delay={1} duration={8} distance={8}>
         <MessageBubble />
       </Floating>
-      <Floating className="top-[52%] right-[3%] xl:right-[6%]" delay={1.05} duration={7} rotate={6}>
+      <Floating className="top-[52%] right-[3%] xl:top-[41.5%] xl:right-[6%]" delay={1.05} duration={7} rotate={6}>
         <PhoneCard />
       </Floating>
       <Floating className="bottom-[3%] left-[9%] hidden xl:block min-[90rem]:left-[12%]" delay={1.2} duration={6.5} rotate={-3}>
