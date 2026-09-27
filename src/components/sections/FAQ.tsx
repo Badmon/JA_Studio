@@ -15,7 +15,15 @@ export function FAQ() {
       <div className="container-page grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
-            <SectionTitle id="faq-title" eyebrow={faqContent.eyebrow} title={faqContent.title} />
+            {/* Cada línea del título recorta su contenido (animación de revelado) y "frecuentes" es más
+                ancha que la columna en pantallas grandes: se amplía el área de recorte hacia la derecha
+                sin cambiar el ancho del texto. */}
+            <SectionTitle
+              id="faq-title"
+              eyebrow={faqContent.eyebrow}
+              title={faqContent.title}
+              titleClassName="[&>span]:-mr-[0.15em] [&>span]:pr-[0.15em]"
+            />
             <Reveal delay={0.15} className="mt-8 max-w-sm">
               <p className="text-ink-soft">{faqContent.aside}</p>
               <Button href={getWhatsAppLink()} variant="secondary" className="mt-6">
