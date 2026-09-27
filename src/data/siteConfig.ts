@@ -65,6 +65,14 @@ export const SECTION_IDS = {
 export const SHOW_PROJECT_GALLERY = true
 
 /**
+ * Interacción de la galería: con true, al pasar el cursor (o mantener pulsada una tarjeta)
+ * las filas se detienen y cada tarjeta muestra su título y categoría.
+ * Con false, la galería se mueve siempre y solo muestra las imágenes.
+ * Actívala cuando tengas proyectos reales que presentar.
+ */
+export const SHOW_PROJECT_DETAILS = false
+
+/**
  * Muestra u oculta la franja "Empresas con las que he colaborado" (entre "Sobre mí" y FAQ).
  * Desactivada hasta tener empresas que mostrar: cámbiala a true y reemplaza los elementos
  * de `technologiesContent.items` en src/data/content.ts.

@@ -19,15 +19,7 @@ const PREVIEW_ASPECT_RATIO = '16/9'
  */
 const PREVIEW_TITLES: Record<string, string> = import.meta.env.DEV
   ? {
-      image1: 'Gestión de producto',
-      image2: 'Plataforma de pagos',
-      image3: 'CRM de ventas',
-      image4: 'Automatización',
-      image5: 'Infraestructura cloud',
-      image6: 'Espacio colaborativo',
-      image7: 'Analítica de producto',
-      image8: 'Plataforma de despliegue',
-      image9: 'Diseño web',
+      image1: 'Plataforma de despliegue',
     }
   : {}
 

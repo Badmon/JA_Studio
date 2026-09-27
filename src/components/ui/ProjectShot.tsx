@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../../data/projects'
+import { SHOW_PROJECT_DETAILS } from '../../data/siteConfig'
 import { cn, isExternalHref } from '../../lib/cn'
 import { ProjectMockup } from '../mockups/ProjectMockup'
 
@@ -8,6 +9,8 @@ export const DEFAULT_SHOT_ASPECT_RATIO = '16/10'
 
 type ProjectShotProps = {
   project: Project
+  /** Copia repetida del bucle de la galería: queda fuera del orden de tabulación. */
+  duplicate?: boolean
 }
 
 /**
@@ -15,7 +18,7 @@ type ProjectShotProps = {
  * La altura es fija por breakpoint y el ancho sale de la proporción del proyecto,
  * así cada captura conserva su forma y la galería gana ritmo editorial.
  */
-export function ProjectShot({ project }: ProjectShotProps) {
+export function ProjectShot({ project, duplicate = false }: ProjectShotProps) {
   const external = project.url ? isExternalHref(project.url) : false
 
   const visual = project.image ? (
@@ -37,7 +40,7 @@ export function ProjectShot({ project }: ProjectShotProps) {
     </div>
   ) : null
 
-  const overlay = (
+  const overlay = SHOW_PROJECT_DETAILS && (
     <div
       className={cn(
         'pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-white sm:p-6',
@@ -76,6 +79,7 @@ export function ProjectShot({ project }: ProjectShotProps) {
         className={cardClassName}
         style={style}
         aria-label={`Ver proyecto ${project.title} (${project.category})${external ? ', se abre en una pestaña nueva' : ''}`}
+        tabIndex={duplicate ? -1 : undefined}
         draggable={false}
       >
         {visual}

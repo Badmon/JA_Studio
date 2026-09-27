@@ -102,12 +102,12 @@ export function MarqueeRow({ projects, direction = 'left', speed = 45, paused = 
             ref={copy === 0 ? groupRef : undefined}
             className={`flex shrink-0 ${rowGap}`}
             // La segunda copia solo sirve para el bucle visual: se oculta a lectores y al teclado.
+            // No usa `inert`, porque eso también ignora el cursor y sus tarjetas no reaccionarían al hover.
             aria-hidden={copy === 1 || undefined}
-            inert={copy === 1}
           >
             {projects.map((project, index) => (
               <li key={`${copy}-${index}-${project.id}`} className="shrink-0">
-                <ProjectShot project={project} />
+                <ProjectShot project={project} duplicate={copy === 1} />
               </li>
             ))}
           </ul>

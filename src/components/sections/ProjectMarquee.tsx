@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SECTION_IDS } from '../../data/siteConfig'
+import { SECTION_IDS, SHOW_PROJECT_DETAILS } from '../../data/siteConfig'
 import { galleryContent } from '../../data/content'
 import { projects } from '../../data/projects'
 import { previewProjects } from '../../data/previewProjects'
@@ -55,10 +55,15 @@ export function ProjectMarquee() {
       <div className="mt-12 px-2 sm:mt-16 sm:px-4">
         <div
           className="overflow-hidden rounded-[2rem] bg-surface-muted py-6 sm:rounded-[3rem] sm:py-10 lg:py-14"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
+          // Solo se detiene al pasar el cursor si se muestran los detalles de cada proyecto.
+          {...(SHOW_PROJECT_DETAILS
+            ? {
+                onMouseEnter: () => setPaused(true),
+                onMouseLeave: () => setPaused(false),
+                onFocus: () => setPaused(true),
+                onBlur: () => setPaused(false),
+              }
+            : {})}
         >
           <div className="space-y-3 sm:space-y-5 lg:space-y-6">
             <MarqueeRow
