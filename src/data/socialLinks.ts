@@ -1,4 +1,4 @@
-import { SITE, SOCIAL_PROFILES } from './siteConfig'
+import { SOCIAL_PROFILES } from './siteConfig'
 import { getEmailLink, getWhatsAppLink } from '../lib/contact'
 
 export type SocialNetwork = 'linkedin' | 'github' | 'whatsapp' | 'email'
@@ -17,7 +17,7 @@ const allLinks: SocialLink[] = [
   { network: 'linkedin', label: 'LinkedIn', href: SOCIAL_PROFILES.linkedin },
   { network: 'github', label: 'GitHub', href: SOCIAL_PROFILES.github },
   { network: 'whatsapp', label: 'WhatsApp', href: getWhatsAppLink() },
-  { network: 'email', label: SITE.email, href: getEmailLink() },
+  { network: 'email', label: 'Correo', href: getEmailLink() },
 ]
 
 export const socialLinks: SocialLink[] = allLinks.filter((link) => link.href !== '')
