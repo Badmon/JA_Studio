@@ -1,0 +1,25 @@
+# Dependencias
+node_modules
+
+# Build de producción (Netlify lo genera en cada despliegue)
+dist
+dist-ssr
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+*.local
+
+# Netlify CLI
+.netlify
+
+# Logs y caché
+*.log
+npm-debug.log*
+*.tsbuildinfo
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.idea
