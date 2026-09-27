@@ -31,7 +31,7 @@ export const testimonialsContent = {
 
 export const aboutContent = {
   eyebrow: 'Sobre mí',
-  title: `Hola, soy ${SITE.name}`,
+  title: 'Hola, soy Juan',
   paragraphs: [
     'Soy desarrollador y me especializo en convertir ideas y necesidades de negocio en soluciones digitales modernas, funcionales y fáciles de utilizar.',
     'Más allá del código, me interesa entender qué necesita realmente cada proyecto y construir una solución que tenga sentido para las personas que la van a utilizar.',
