@@ -12,7 +12,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-ink-soft">
-              {SITE.title}. Páginas web, sistemas y herramientas pensadas para ayudarte a crecer.
+              Desarrollador de soluciones digitales. Creo herramientas pensadas para ayudarte a crecer.
             </p>
           </div>
 

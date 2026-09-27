@@ -19,10 +19,10 @@ export function Benefits() {
           {benefits.map((benefit) => {
             const Icon = benefit.icon
             return (
-              <motion.li key={benefit.id} variants={fadeUp} className="border-t-2 border-ink pt-7">
+              <motion.li key={benefit.id} variants={fadeUp} className="border-t-2 border-ink pt-6">
                 <Icon className="size-7" aria-hidden="true" strokeWidth={1.75} />
-                <h3 className="mt-8 text-2xl font-extrabold tracking-tight">{benefit.title}</h3>
-                <p className="mt-3 text-ink-soft">{benefit.description}</p>
+                <h3 className="mt-5 text-2xl leading-tight font-extrabold tracking-tight">{benefit.title}</h3>
+                <p className="mt-1.5 text-ink-soft">{benefit.description}</p>
               </motion.li>
             )
           })}
