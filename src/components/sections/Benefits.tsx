@@ -20,8 +20,10 @@ export function Benefits() {
             const Icon = benefit.icon
             return (
               <motion.li key={benefit.id} variants={fadeUp} className="border-t-2 border-ink pt-4">
-                <Icon className="size-7" aria-hidden="true" strokeWidth={1.75} />
-                <h3 className="mt-5 text-2xl leading-tight font-extrabold tracking-tight">{benefit.title}</h3>
+                <div className="flex items-center gap-3 sm:block">
+                  <Icon className="size-7 shrink-0" aria-hidden="true" strokeWidth={1.75} />
+                  <h3 className="text-2xl leading-tight font-extrabold tracking-tight sm:mt-5">{benefit.title}</h3>
+                </div>
                 <p className="mt-1.5 text-ink-soft">{benefit.description}</p>
               </motion.li>
             )
