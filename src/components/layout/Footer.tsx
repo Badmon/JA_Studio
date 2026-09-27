@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-bg pt-8 pb-10 sm:pt-10">
       <div className="container-page">
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 border-b border-line pb-12 md:grid-cols-[1.5fr_1fr_1fr] md:gap-12">
-          <div className="col-span-2 max-w-sm md:col-span-1">
+          <div className="hidden max-w-sm md:block">
             <Logo />
             <p className="mt-5 text-ink-soft">
               Desarrollador de soluciones digitales. Creo herramientas para ayudarte a crecer.
