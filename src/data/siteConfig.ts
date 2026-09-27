@@ -45,7 +45,7 @@ export const WHATSAPP_DEFAULT_MESSAGE = `Hola ${SITE.firstName}, vi tu portafoli
 
 /** Perfiles públicos. Déjalos vacíos para ocultarlos. */
 export const SOCIAL_PROFILES = {
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/jleonh/',
   github: '',
 } as const
 
