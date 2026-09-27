@@ -5,10 +5,9 @@ import { Mail, Phone } from 'lucide-react'
 import { getEmailLink, getPhoneLink, getWhatsAppLink } from '../../lib/contact'
 import { clipReveal, fadeUp, inViewOnce, stagger } from '../../lib/motion'
 import { Button } from '../ui/Button'
-import { ProfilePhoto } from '../ui/ProfilePhoto'
 
 const contactLink =
-  'inline-flex items-center gap-3 font-semibold text-white hover:underline hover:underline-offset-4'
+  'inline-flex items-center gap-3 text-lg font-semibold tracking-tight text-white hover:underline hover:underline-offset-4'
 
 export function FinalCTA() {
   return (
@@ -24,9 +23,8 @@ export function FinalCTA() {
           aria-hidden="true"
           className="absolute -top-32 -right-32 size-[26rem] rounded-full border-[3rem] border-accent/15 sm:size-[36rem] sm:border-[4rem]"
         />
-        <span aria-hidden="true" className="absolute bottom-16 left-[8%] hidden size-3 rounded-full bg-accent lg:block" />
 
-        <div className="container-page relative py-24 text-center sm:py-32 lg:py-44">
+        <div className="container-page relative pt-24 pb-16 text-center sm:pt-32 sm:pb-20 lg:pt-44 lg:pb-28">
           <motion.p variants={fadeUp} className="eyebrow mb-8 text-white/70">
             Contacto
           </motion.p>
@@ -63,30 +61,19 @@ export function FinalCTA() {
 
           <motion.address
             variants={fadeUp}
-            className="mx-auto mt-16 flex max-w-3xl flex-col gap-6 border-t border-white/15 pt-10 text-left not-italic sm:flex-row sm:items-center sm:justify-between"
+            className="mx-auto mt-14 max-w-3xl border-t border-white/15 pt-8 not-italic"
           >
-            <div className="flex items-center gap-4">
-              {/* Avatar circular: la foto cubre todo el círculo y se amplía hacia el rostro
-                  (punto de anclaje ≈ 48 % horizontal, 15 % vertical). */}
-              <span className="block aspect-square size-16 shrink-0 overflow-hidden rounded-full ring-2 ring-accent/60">
-                <ProfilePhoto decorative className="origin-[48%_15%] scale-[2.3] object-[48%_15%]" />
-              </span>
-              <div>
-                <p className="text-xl font-extrabold tracking-tight">{SITE.name}</p>
-                <p className="mt-1 text-white/65">{SITE.title}</p>
-              </div>
-            </div>
-            <ul className="space-y-2">
+            <ul className="mx-auto flex max-w-xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
               <li>
                 <a href={getPhoneLink()} className={contactLink}>
-                  <Phone className="size-4 text-accent" aria-hidden="true" />
+                  <Phone className="size-5 text-accent" aria-hidden="true" />
                   <span className="sr-only">Teléfono: </span>
                   {SITE.phoneDisplay}
                 </a>
               </li>
               <li>
                 <a href={getEmailLink()} className={contactLink}>
-                  <Mail className="size-4 text-accent" aria-hidden="true" />
+                  <Mail className="size-5 text-accent" aria-hidden="true" />
                   <span className="sr-only">Correo: </span>
                   {SITE.email}
                 </a>
