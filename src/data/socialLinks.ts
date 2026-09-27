@@ -16,7 +16,7 @@ export type SocialLink = {
 const allLinks: SocialLink[] = [
   { network: 'linkedin', label: 'LinkedIn', href: SOCIAL_PROFILES.linkedin },
   { network: 'github', label: 'GitHub', href: SOCIAL_PROFILES.github },
-  { network: 'whatsapp', label: `WhatsApp · ${SITE.phoneDisplay}`, href: getWhatsAppLink() },
+  { network: 'whatsapp', label: 'WhatsApp', href: getWhatsAppLink() },
   { network: 'email', label: SITE.email, href: getEmailLink() },
 ]
 
