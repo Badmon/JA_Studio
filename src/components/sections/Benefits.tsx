@@ -10,7 +10,7 @@ export function Benefits() {
       <div className="container-page">
         <SectionTitle id="benefits-title" eyebrow={benefitsContent.eyebrow} title={benefitsContent.title} />
         <motion.ul
-          className="mt-14 grid gap-x-10 gap-y-12 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-14 grid gap-x-10 gap-y-5 sm:mt-20 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-4"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
