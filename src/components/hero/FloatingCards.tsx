@@ -2,7 +2,7 @@ import { Check, MessageCircle, TrendingUp } from 'lucide-react'
 
 /* Ilustraciones decorativas del hero, construidas solo con CSS. */
 
-const card = 'rounded-2xl bg-white shadow-float ring-1 ring-ink/5'
+const card = 'rounded-2xl bg-surface shadow-float ring-1 ring-ink/5 dark:ring-ink/10'
 
 export function BrowserCard() {
   return (
@@ -52,8 +52,8 @@ export function ProjectMiniCard() {
     <div className={`${card} w-56 p-3`}>
       <div className="relative h-24 overflow-hidden rounded-xl bg-[#e6ddd0]">
         <div className="absolute -right-4 -bottom-6 size-20 rounded-full bg-[#c9b79c]" />
-        <div className="absolute top-3 left-3 h-2 w-16 rounded-full bg-ink/70" />
-        <div className="absolute top-7 left-3 h-1.5 w-10 rounded-full bg-ink/25" />
+        <div className="absolute top-3 left-3 h-2 w-16 rounded-full bg-carbon/70" />
+        <div className="absolute top-7 left-3 h-1.5 w-10 rounded-full bg-carbon/25" />
       </div>
       <div className="mt-3 flex items-center justify-between">
         <div>
@@ -70,16 +70,16 @@ export function ProjectMiniCard() {
 
 export function PhoneCard() {
   return (
-    <div className="w-32 rounded-[1.6rem] bg-ink p-1.5 shadow-float">
+    <div className="w-32 rounded-[1.6rem] bg-carbon p-1.5 shadow-float dark:ring-1 dark:ring-ink/15">
       <div className="overflow-hidden rounded-[1.25rem] bg-bg">
-        <div className="mx-auto mt-1.5 h-1.5 w-10 rounded-full bg-ink" />
+        <div className="mx-auto mt-1.5 h-1.5 w-10 rounded-full bg-carbon" />
         <div className="space-y-1.5 p-2.5">
           <div className="h-14 rounded-lg bg-accent" />
           <div className="h-1.5 w-4/5 rounded-full bg-ink/80" />
           <div className="h-1.5 w-3/5 rounded-full bg-ink/20" />
           <div className="grid grid-cols-2 gap-1.5 pt-1">
-            <div className="h-9 rounded-md bg-white" />
-            <div className="h-9 rounded-md bg-white" />
+            <div className="h-9 rounded-md bg-surface" />
+            <div className="h-9 rounded-md bg-surface" />
           </div>
           <div className="h-4 rounded-full bg-ink" />
         </div>
@@ -94,7 +94,7 @@ export function MessageBubble() {
       <span className="grid size-8 shrink-0 place-items-center rounded-full bg-accent">
         <MessageCircle className="size-4" />
       </span>
-      <div className="rounded-2xl rounded-tl-md bg-white px-3.5 py-2.5 text-[0.8rem] leading-snug font-medium shadow-float ring-1 ring-ink/5">
+      <div className="rounded-2xl rounded-tl-md bg-surface px-3.5 py-2.5 text-[0.8rem] leading-snug font-medium shadow-float ring-1 ring-ink/5 dark:ring-ink/10">
         ¡Hola! Quiero una web para mi negocio 👋
       </div>
     </div>
@@ -123,7 +123,7 @@ export function DashboardCard() {
       <svg viewBox="0 0 200 40" className="mt-2 h-10 w-full" fill="none">
         <path
           d="M0 32 C 25 30, 35 18, 60 20 S 100 30, 120 18 S 165 6, 200 8"
-          stroke="#111"
+          stroke="var(--color-ink)"
           strokeWidth="2.5"
           strokeLinecap="round"
         />

@@ -22,7 +22,7 @@ export function Logo({ tone = 'dark', className, onClick }: LogoProps) {
         aria-hidden="true"
         className={cn(
           'relative grid size-9 place-items-center rounded-xl text-sm transition-transform duration-300 group-hover:-rotate-6',
-          tone === 'dark' ? 'bg-ink text-white' : 'bg-white text-ink',
+          tone === 'dark' ? 'bg-ink text-ink-inverse' : 'bg-white text-carbon',
         )}
       >
         {initial}

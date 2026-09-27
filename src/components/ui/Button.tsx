@@ -15,9 +15,9 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-ink text-white hover:bg-[#2a2a2a]',
-  secondary: 'bg-transparent text-ink ring-1 ring-inset ring-ink/20 hover:ring-ink hover:bg-white',
-  light: 'bg-white text-ink hover:bg-accent',
+  primary: 'bg-ink text-ink-inverse hover:bg-ink/85',
+  secondary: 'bg-transparent text-ink ring-1 ring-inset ring-ink/20 hover:ring-ink hover:bg-surface',
+  light: 'bg-white text-carbon hover:bg-accent',
   'ghost-light': 'bg-transparent text-white ring-1 ring-inset ring-white/30 hover:ring-white',
 }
 
@@ -28,9 +28,9 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const arrowBgClasses: Record<ButtonVariant, string> = {
   primary: 'bg-accent text-accent-ink',
-  secondary: 'bg-ink text-white',
-  light: 'bg-ink text-white',
-  'ghost-light': 'bg-white text-ink',
+  secondary: 'bg-ink text-ink-inverse',
+  light: 'bg-carbon text-white',
+  'ghost-light': 'bg-white text-carbon',
 }
 
 /** Botón tipo "pill". Siempre es un enlace porque todas las acciones del sitio navegan. */

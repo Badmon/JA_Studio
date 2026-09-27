@@ -13,7 +13,7 @@ export function FinalCTA() {
   return (
     <section id={SECTION_IDS.contact} aria-labelledby="cta-title" className="px-2 pb-2 sm:px-4 sm:pb-4">
       <motion.div
-        className="relative overflow-hidden rounded-[2rem] bg-ink text-white sm:rounded-[3rem]"
+        className="relative overflow-hidden rounded-[2rem] bg-contrast text-white sm:rounded-[3rem] dark:ring-1 dark:ring-white/10 dark:ring-inset"
         initial="hidden"
         whileInView="visible"
         viewport={inViewOnce}

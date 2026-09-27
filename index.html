@@ -9,6 +9,21 @@
     <meta name="description" content="%SITE_DESCRIPTION%" />
     <meta name="author" content="%SITE_NAME%" />
     <meta name="theme-color" content="#F4F3EF" />
+    <!-- Aplica el tema (claro/oscuro) antes de pintar la página, para evitar un parpadeo.
+         Usa la preferencia guardada o, si no hay, la del sistema. Ver src/lib/theme.ts. -->
+    <script>
+      ;(function () {
+        var theme
+        try {
+          theme = localStorage.getItem('theme')
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        document.documentElement.dataset.theme = theme
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#121211' : '#F4F3EF'
+      })()
+    </script>
     <meta name="robots" content="index, follow" />
     <!-- %SITE_URL_TAGS% -->
 

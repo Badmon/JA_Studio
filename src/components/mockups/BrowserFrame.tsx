@@ -10,7 +10,7 @@ type BrowserFrameProps = {
 /** Marco de navegador ilustrado para mostrar mockups. */
 export function BrowserFrame({ url, children, className }: BrowserFrameProps) {
   return (
-    <div className={cn('overflow-hidden rounded-2xl bg-white shadow-float ring-1 ring-ink/5', className)}>
+    <div className={cn('theme-light overflow-hidden rounded-2xl bg-white shadow-float ring-1 ring-ink/5', className)}>
       <div className="flex items-center gap-3 border-b border-line/70 px-4 py-3">
         <div className="flex gap-1.5" aria-hidden="true">
           <span className="size-2.5 rounded-full bg-[#ff6159]" />

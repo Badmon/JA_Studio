@@ -20,7 +20,63 @@
   --color-accent-strong: #4a6b12;
   /* Texto que va encima del acento. */
   --color-accent-ink: #111111;
+
+  /* Texto sobre superficies de color `ink` (botones oscuros, acordeón abierto...). */
+  --color-ink-inverse: #ffffff;
+  /* Bloques que se mantienen oscuros en ambos modos (CTA final). */
+  --color-contrast: #111111;
+
+  --shadow-color: 17 17 17;
+  --shadow-strength: 1;
+
+  color-scheme: light;
 }
+
+/*
+ * Modo oscuro: mismos tokens con valores cálidos, en coherencia con el crema del modo claro.
+ * El atributo data-theme lo pone el script de index.html antes de cargar React.
+ */
+:root[data-theme='dark'] {
+  --color-bg: #121211;
+  --color-surface: #1c1c1a;
+  --color-surface-muted: #252522;
+  --color-ink: #f4f3ef;
+  --color-ink-soft: #b9b6ae;
+  --color-ink-muted: #928f88;
+  --color-line: #33322e;
+
+  --color-accent: #c2e66e;
+  --color-accent-strong: #c2e66e;
+  --color-accent-ink: #111111;
+
+  --color-ink-inverse: #111111;
+  --color-contrast: #1c1c1a;
+
+  --shadow-color: 0 0 0;
+  --shadow-strength: 2.5;
+
+  color-scheme: dark;
+}
+
+/*
+ * Zona que siempre se ve en modo claro (p. ej. los mockups de proyectos, que representan
+ * pantallas de clientes): redefine los tokens con los valores claros.
+ */
+.theme-light {
+  --color-bg: #f4f3ef;
+  --color-surface: #ffffff;
+  --color-surface-muted: #ebe9e3;
+  --color-ink: #111111;
+  --color-ink-soft: #55534e;
+  --color-ink-muted: #6b6963;
+  --color-line: #dcd9d1;
+  --color-ink-inverse: #ffffff;
+  --shadow-color: 17 17 17;
+  --shadow-strength: 1;
+  color: var(--color-ink);
+}
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme inline {
   --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -35,9 +91,18 @@
   --color-accent: var(--color-accent);
   --color-accent-strong: var(--color-accent-strong);
   --color-accent-ink: var(--color-accent-ink);
+  --color-ink-inverse: var(--color-ink-inverse);
+  --color-contrast: var(--color-contrast);
+  /* Negro fijo: no cambia con el tema (marco del teléfono, texto sobre fondos blancos fijos). */
+  --color-carbon: #111111;
 
-  --shadow-soft: 0 1px 2px rgb(17 17 17 / 0.04), 0 8px 24px -12px rgb(17 17 17 / 0.12);
-  --shadow-float: 0 2px 4px rgb(17 17 17 / 0.04), 0 18px 40px -18px rgb(17 17 17 / 0.22);
+  /* Las sombras se oscurecen en modo oscuro para que sigan viéndose sobre fondos oscuros. */
+  --shadow-soft:
+    0 1px 2px rgb(var(--shadow-color) / calc(0.04 * var(--shadow-strength))),
+    0 8px 24px -12px rgb(var(--shadow-color) / calc(0.12 * var(--shadow-strength)));
+  --shadow-float:
+    0 2px 4px rgb(var(--shadow-color) / calc(0.04 * var(--shadow-strength))),
+    0 18px 40px -18px rgb(var(--shadow-color) / calc(0.22 * var(--shadow-strength)));
 
   --animate-marquee: marquee 40s linear infinite;
 
@@ -65,6 +130,9 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
     font-family: var(--font-sans);
     font-size: 1.125rem;
     line-height: 1.6;

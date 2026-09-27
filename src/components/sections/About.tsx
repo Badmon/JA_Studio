@@ -14,7 +14,7 @@ export function About() {
     <section id={SECTION_IDS.about} aria-labelledby="about-title" className="section-y">
       <div className="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
         <Reveal variants={scaleIn} className="lg:col-span-5">
-          <div className="aspect-4/5 overflow-hidden rounded-4xl bg-[#ebe9e4] sm:rounded-[2.5rem]">
+          <div className="aspect-4/5 overflow-hidden rounded-4xl bg-surface-muted sm:rounded-[2.5rem]">
             <ProfilePhoto className="object-[50%_35%]" />
           </div>
         </Reveal>

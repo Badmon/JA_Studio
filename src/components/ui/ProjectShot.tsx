@@ -41,7 +41,7 @@ export function ProjectShot({ project }: ProjectShotProps) {
     <div
       className={cn(
         'pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 text-white sm:p-6',
-        'bg-gradient-to-t from-ink/75 via-ink/35 to-transparent pt-16',
+        'bg-gradient-to-t from-carbon/75 via-carbon/35 to-transparent pt-16',
         'translate-y-2 opacity-0 transition-[opacity,transform] duration-500 ease-out',
         'group-hover/shot:translate-y-0 group-hover/shot:opacity-100',
         'group-focus-visible/shot:translate-y-0 group-focus-visible/shot:opacity-100',

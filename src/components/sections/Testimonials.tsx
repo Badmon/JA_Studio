@@ -9,7 +9,7 @@ import { cn } from '../../lib/cn'
 import { SectionTitle } from '../ui/SectionTitle'
 
 const navButton =
-  'grid size-12 place-items-center rounded-full bg-surface text-ink shadow-soft transition-colors duration-300 hover:bg-ink hover:text-white sm:size-14'
+  'grid size-12 place-items-center rounded-full bg-surface text-ink shadow-soft transition-colors duration-300 hover:bg-ink hover:text-ink-inverse sm:size-14'
 
 export function Testimonials() {
   const [[index, direction], setState] = useState<[number, number]>([0, 0])

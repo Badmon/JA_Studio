@@ -8,6 +8,7 @@ import { EASE_OUT } from '../../lib/motion'
 import { cn } from '../../lib/cn'
 import { Button } from '../ui/Button'
 import { Logo } from '../ui/Logo'
+import { ThemeToggle } from '../ui/ThemeToggle'
 
 const MOBILE_MENU_ID = 'mobile-menu'
 
@@ -45,7 +46,7 @@ export function Navbar() {
     >
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-ink-inverse"
       >
         Saltar al contenido
       </a>
@@ -72,6 +73,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <div className="hidden md:block">
             <Button href={`#${SECTION_IDS.contact}`} className="h-11">
               Hablemos
@@ -83,7 +85,7 @@ export function Navbar() {
             aria-expanded={menuOpen}
             aria-controls={MOBILE_MENU_ID}
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-            className="grid size-11 place-items-center rounded-full bg-ink text-white md:hidden"
+            className="grid size-11 place-items-center rounded-full bg-ink text-ink-inverse md:hidden"
           >
             {menuOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
