@@ -5,6 +5,7 @@ import { Mail, Phone } from 'lucide-react'
 import { getEmailLink, getPhoneLink, getWhatsAppLink } from '../../lib/contact'
 import { clipReveal, fadeUp, inViewOnce, stagger } from '../../lib/motion'
 import { Button } from '../ui/Button'
+import { WhatsAppIcon } from '../ui/BrandIcons'
 
 const contactLink =
   'inline-flex items-center gap-3 text-lg font-semibold tracking-tight text-white hover:underline hover:underline-offset-4'
@@ -50,7 +51,14 @@ export function FinalCTA() {
             >
               {finalCtaContent.primaryCta}
             </Button>
-            <Button href={getWhatsAppLink()} variant="ghost-light" size="lg">
+            <Button
+              href={getWhatsAppLink()}
+              variant="ghost-light"
+              size="lg"
+              icon={
+                <WhatsAppIcon className="size-5 transition-colors duration-300 group-hover:text-[#25D366] sm:size-6" />
+              }
+            >
               {finalCtaContent.secondaryCta}
             </Button>
           </motion.div>

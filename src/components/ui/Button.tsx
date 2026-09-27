@@ -12,6 +12,8 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   size?: ButtonSize
   /** Muestra una flecha que se desplaza al pasar el cursor. */
   withArrow?: boolean
+  /** Icono decorativo antes del texto (por ejemplo, el de WhatsApp). */
+  icon?: ReactNode
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -40,6 +42,7 @@ export function Button({
   variant = 'primary',
   size = 'md',
   withArrow = false,
+  icon,
   className,
   ...rest
 }: ButtonProps) {
@@ -59,6 +62,11 @@ export function Button({
       )}
       {...rest}
     >
+      {icon && (
+        <span aria-hidden="true" className="-ml-1 flex shrink-0 items-center">
+          {icon}
+        </span>
+      )}
       <span>{children}</span>
       {withArrow && (
         <span
