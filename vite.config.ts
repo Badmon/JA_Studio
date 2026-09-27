@@ -1,4 +1,5 @@
 import { existsSync, readdirSync } from 'node:fs'
+import { dirname, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -57,12 +58,27 @@ function previewProjects(): Plugin {
     resolveId(id) {
       return id === PREVIEW_MODULE_ID ? resolvedId : undefined
     },
+    // Al agregar o borrar una imagen .webp de la carpeta, se regenera la lista y se recarga la página.
+    configureServer(server) {
+      const dir = resolve(PREVIEW_DIR)
+      const onChange = (file: string) => {
+        if (dirname(file) !== dir || !file.endsWith('.webp')) return
+        const graph = server.environments.client.moduleGraph
+        const mod = graph.getModuleById(resolvedId)
+        if (mod) graph.invalidateModule(mod)
+        server.ws.send({ type: 'full-reload' })
+      }
+      server.watcher.add(dir)
+      server.watcher.on('add', onChange)
+      server.watcher.on('unlink', onChange)
+    },
     load(id) {
       if (id !== resolvedId) return undefined
       if (!isDevServer || !existsSync(PREVIEW_DIR)) return 'export default []'
       const urls = readdirSync(PREVIEW_DIR)
         .filter((file) => file.endsWith('.webp'))
-        .sort()
+        // Orden numérico: image2 va antes que image10.
+        .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
         .map((file) => `/${PREVIEW_DIR}/${file}`)
       return `export default ${JSON.stringify(urls)}`
     },

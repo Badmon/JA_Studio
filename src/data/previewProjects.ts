@@ -13,18 +13,21 @@ import type { Project } from './projects'
 /** Proporción de las tarjetas de ejemplo. Las capturas son 1600×831 (≈1,92:1); 16:9 recorta solo ~4 % por lado. */
 const PREVIEW_ASPECT_RATIO = '16/9'
 
-/** Títulos genéricos por archivo, sin nombres de marcas. */
+/**
+ * Títulos genéricos por archivo (image1.webp, image2.webp…), sin nombres de marcas.
+ * Si un archivo no aparece aquí, la tarjeta se titula "Ejemplo N".
+ */
 const PREVIEW_TITLES: Record<string, string> = import.meta.env.DEV
   ? {
-      'ejemplo-01-gestion-de-producto': 'Gestión de producto',
-      'ejemplo-02-plataforma-de-pagos': 'Plataforma de pagos',
-      'ejemplo-03-crm-de-ventas': 'CRM de ventas',
-      'ejemplo-04-automatizacion': 'Automatización',
-      'ejemplo-05-infraestructura-cloud': 'Infraestructura cloud',
-      'ejemplo-06-espacio-colaborativo': 'Espacio colaborativo',
-      'ejemplo-07-analitica-de-producto': 'Analítica de producto',
-      'ejemplo-08-plataforma-de-despliegue': 'Plataforma de despliegue',
-      'ejemplo-09-diseno-web': 'Diseño web',
+      image1: 'Gestión de producto',
+      image2: 'Plataforma de pagos',
+      image3: 'CRM de ventas',
+      image4: 'Automatización',
+      image5: 'Infraestructura cloud',
+      image6: 'Espacio colaborativo',
+      image7: 'Analítica de producto',
+      image8: 'Plataforma de despliegue',
+      image9: 'Diseño web',
     }
   : {}
 
