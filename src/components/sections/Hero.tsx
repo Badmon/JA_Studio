@@ -59,7 +59,7 @@ export function Hero() {
     <section
       id={SECTION_IDS.top}
       aria-labelledby="hero-title"
-      className="relative overflow-hidden pt-28 pb-16 lg:pt-38 lg:pb-20"
+      className="relative overflow-hidden pt-28 pb-10 sm:pb-8 lg:pt-38 lg:pb-20"
     >
       <DesktopFloatingElements />
 
