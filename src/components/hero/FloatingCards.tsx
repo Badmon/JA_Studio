@@ -68,18 +68,6 @@ export function ProjectMiniCard() {
   )
 }
 
-export function OnlineBadge() {
-  return (
-    <div className="flex items-center gap-2 rounded-full bg-ink py-2 pr-4 pl-3 text-sm font-semibold text-white shadow-float">
-      <span className="relative flex size-2.5">
-        <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
-        <span className="relative inline-flex size-2.5 rounded-full bg-accent" />
-      </span>
-      Online
-    </div>
-  )
-}
-
 export function PhoneCard() {
   return (
     <div className="w-32 rounded-[1.6rem] bg-ink p-1.5 shadow-float">

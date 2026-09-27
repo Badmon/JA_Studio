@@ -24,7 +24,7 @@ function TechList({ hidden = false }: { hidden?: boolean }) {
 
 export function Technologies() {
   return (
-    <section aria-labelledby="technologies-title" className="border-y border-line py-14 sm:py-20">
+    <section aria-labelledby="technologies-title" className="border-y border-line py-10 sm:py-14">
       <div className="container-page">
         <h2 id="technologies-title" className="eyebrow text-center">
           {technologiesContent.title}

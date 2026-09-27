@@ -1,4 +1,4 @@
-# Portafolio — Soluciones digitales
+# JA Studio — Portafolio de Juan Antonio León
 
 Landing page / portafolio comercial construido con **React + TypeScript + Vite**, **Tailwind CSS 4**, **Framer Motion** y **Lucide Icons**. Listo para desplegar en **Netlify** desde GitHub.
 
@@ -28,14 +28,12 @@ npm run preview    # sirve localmente la carpeta /dist
 src/
 ├── data/                   ← TODO el contenido editable
 │   ├── siteConfig.ts       ← nombre, título, teléfono, email, WhatsApp, SEO, redes
-│   ├── content.ts          ← textos de cada sección (hero, intro, CTA, etc.)
+│   ├── content.ts          ← textos de cada sección (hero, galería, sobre mí, CTA, etc.)
 │   ├── projects.ts         ← proyectos
-│   ├── services.ts         ← servicios
 │   ├── benefits.ts         ← "por qué trabajar conmigo"
 │   ├── process.ts          ← pasos del proceso
 │   ├── testimonials.ts     ← testimonios
 │   ├── faq.ts              ← preguntas frecuentes
-│   ├── clients.ts          ← logos de clientes
 │   └── socialLinks.ts      ← LinkedIn, GitHub, WhatsApp, email
 ├── components/
 │   ├── layout/             ← Navbar, Footer
@@ -52,37 +50,42 @@ src/
 
 ## 3. Modificar proyectos
 
-> La sección "Proyectos seleccionados" está **oculta** por ahora. Para mostrarla, cambia `SHOW_PROJECTS` a `true` en `src/data/siteConfig.ts`: vuelven a aparecer la sección, el enlace "Proyectos" de la navbar y el footer, y el botón "Ver proyectos" del hero.
+Los proyectos se muestran en la **galería en movimiento** "Proyectos que cobran vida.": capturas en dos filas que se desplazan solas. Los datos están en `src/data/projects.ts`. Para ocultar la galería, cambia `SHOW_PROJECT_GALLERY` a `false` en `src/data/siteConfig.ts` (también se quita el enlace "Proyectos" de la navbar, el footer y el hero).
 
-Edita `src/data/projects.ts`. Cada proyecto tiene esta forma:
+### Agregar una captura a la galería
+
+1. Guarda la captura en `public/projects/` (por ejemplo `public/projects/mi-tienda.webp`).
+   Recomendado: WebP, unos 1600 px de ancho. Para convertir: `cwebp -q 85 captura.png -o public/projects/mi-tienda.webp`.
+2. Añade el proyecto en `src/data/projects.ts`:
 
 ```ts
 {
-  id: 'plataforma-inventario',
-  title: 'Plataforma de inventario',
-  category: 'Sistema web',
-  description: '…',
-  problem: '…',
-  solution: '…',
-  result: '…',
-  image: '',              // ruta a una captura real, ej. '/projects/inventario.webp'
-  mockup: 'inventory',    // mockup ilustrado que se muestra mientras no haya imagen
-  url: '',                // enlace público; si está vacío, el botón pide una demo por WhatsApp
-  featured: true,         // solo los "featured" aparecen en la página
+  id: 4,
+  title: 'Tienda Online Aurora',
+  category: 'Tienda online',
+  image: '/projects/mi-tienda.webp',
+  url: 'https://mi-tienda.com',   // opcional: añade "Ver proyecto →" al pasar el cursor
+  aspectRatio: '16/10',           // opcional: proporción de la tarjeta (usa la de tu captura)
 }
 ```
 
-**Para usar capturas reales:** guarda la imagen en `public/projects/` (formato `.webp` o `.jpg`, unos 1600 px de ancho, proporción 4:3) y escribe la ruta en `image`, por ejemplo `'/projects/inventario.webp'`.
+- Cada tarjeta tiene una altura fija y su ancho sale de `aspectRatio`, así las capturas **no se deforman**. Si la proporción de la tarjeta no coincide con la de la imagen, se recorta con `object-fit: cover` mostrando la parte superior de la página.
+- Usar proporciones distintas (`'16/10'`, `'4/3'`, `'3/2'`…) da a la galería un ritmo más editorial.
+- Mientras un proyecto no tenga `image`, se muestra su mockup ilustrado (`mockup`). Los tres proyectos incluidos son **ejemplos ilustrativos**: reemplázalos por tus capturas reales.
+- Si hay pocos proyectos, la galería los repite para llenar el ancho de la pantalla.
+
+**Vista previa con capturas de ejemplo (solo local):** si pones imágenes `.webp` en `src/assets/preview-projects/`, la galería las muestra en `npm run dev` en lugar de los proyectos de `projects.ts`. Esa carpeta está ignorada por Git y el build de producción no la incluye, así que sirve para probar el diseño sin publicar nada. Cuando tengas tus capturas reales, bórrala.
+
+**Velocidad:** en `src/components/sections/ProjectMarquee.tsx`, la constante `GALLERY_SPEED` define los segundos que tarda cada fila en dar una vuelta completa (más alto = más lento). La galería se detiene suavemente al pasar el cursor por encima y, si el visitante tiene activado "reducir movimiento", se muestra estática con scroll horizontal manual.
 
 ## 4. Modificar textos
 
-- **Textos de las secciones** (hero, intro, mensaje grande, sobre mí, CTA final…): `src/data/content.ts`.
-- **Servicios, beneficios, proceso, FAQ, testimonios:** su archivo correspondiente en `src/data/`.
+- **Textos de las secciones** (hero, galería, sobre mí, CTA final…): `src/data/content.ts`.
+- **Beneficios, proceso, FAQ, testimonios:** su archivo correspondiente en `src/data/`.
 - **Datos personales** (nombre, título profesional, teléfono, email): objeto `SITE` en `src/data/siteConfig.ts`. Se usan en navbar, "Sobre mí", contacto, footer y metadatos.
 - **Foto de perfil:** `public/images/juan-profile.webp` (800×800, WebP). Se usa en "Sobre mí" y en el bloque de contacto mediante el componente `ProfilePhoto`. Para cambiarla, reemplaza el archivo o actualiza `SITE.photo` (ruta, ancho, alto y texto alternativo) en `src/data/siteConfig.ts`. Se recomienda WebP de unos 800–1200 px (por ejemplo: `cwebp -q 86 foto.jpg -o public/images/juan-profile.webp`).
-- **Logos de clientes:** `src/data/clients.ts`. Guarda los logos en `public/clients/` y añádelos al arreglo. Mientras esté vacío, la fila de logos no se muestra.
 
-> Los **testimonios** (`src/data/testimonials.ts`) y los **clientes** empiezan vacíos: sus bloques se muestran automáticamente cuando añades datos reales (con permiso de tus clientes).
+> Los **testimonios** (`src/data/testimonials.ts`) empiezan vacíos: la sección se muestra automáticamente cuando añades testimonios reales (con permiso de tus clientes).
 >
 > Los tres **proyectos** de `src/data/projects.ts` son ejemplos ilustrativos: reemplázalos por tus trabajos reales.
 
@@ -145,7 +148,7 @@ El proyecto incluye `netlify.toml` con la configuración necesaria:
    git add .
    git commit -m "Primera versión del portafolio"
    git branch -M main
-   git remote add origin https://github.com/tu-usuario/portafolio.git
+   git remote add origin git@github.com:Badmon/JA_Studio.git
    git push -u origin main
    ```
 2. En [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project → GitHub**.

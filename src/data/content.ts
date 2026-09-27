@@ -2,7 +2,7 @@
  * Textos de las secciones del sitio.
  * Edita este archivo para cambiar títulos, párrafos y botones sin tocar los componentes.
  */
-import { SHOW_PROJECTS, SITE } from './siteConfig'
+import { PROJECTS_HREF, SITE } from './siteConfig'
 
 export const heroContent = {
   eyebrow: 'Disponible para nuevos proyectos',
@@ -11,29 +11,8 @@ export const heroContent = {
   subtitle:
     'Diseño y desarrollo páginas web, sistemas y herramientas digitales pensadas para ayudarte a mostrar mejor tu negocio, organizar procesos y crecer.',
   primaryCta: 'Cuéntame tu proyecto',
-  /** Botón secundario: lleva a Proyectos si la sección está visible; si no, a Servicios. */
-  secondaryCta: SHOW_PROJECTS ? 'Ver proyectos' : 'Ver servicios',
-}
-
-export const socialProofContent = {
-  text: 'Soluciones digitales para empresas, negocios y proyectos que quieren crecer.',
-}
-
-export const introContent = {
-  eyebrow: 'Cómo trabajo',
-  titleLines: ['No necesitas saber de tecnología.', 'Solo necesitas saber qué quieres mejorar.'],
-  text: 'Mi trabajo es convertir tus necesidades en una solución clara, moderna y fácil de utilizar. Te acompaño desde la idea hasta la publicación.',
-}
-
-export const servicesContent = {
-  eyebrow: 'Servicios',
-  title: '¿Qué puedo hacer por tu negocio?',
-}
-
-export const projectsContent = {
-  eyebrow: 'Portafolio',
-  title: 'Proyectos seleccionados',
-  subtitle: 'Algunas soluciones que he diseñado y desarrollado.',
+  /** Botón secundario: lleva a la galería de proyectos si está visible; si no, a "Sobre mí". */
+  secondaryCta: PROJECTS_HREF ? 'Ver proyectos' : 'Conocer más',
 }
 
 export const benefitsContent = {
@@ -44,15 +23,6 @@ export const benefitsContent = {
 export const processContent = {
   eyebrow: 'Proceso',
   title: 'Así trabajaremos',
-}
-
-export const statementContent = {
-  lines: [
-    'No necesitas saber de código.',
-    'No necesitas saber de servidores.',
-    'No necesitas entender de dominios.',
-  ],
-  highlight: 'Solo necesitas contarme qué necesita tu negocio.',
 }
 
 export const testimonialsContent = {
@@ -99,4 +69,10 @@ export const finalCtaContent = {
   secondaryCta: 'Escríbeme por WhatsApp',
   note: 'No necesitas tener todo definido.',
   emailSubject: 'Quiero contarte sobre mi proyecto',
+}
+
+export const galleryContent = {
+  eyebrow: 'Proyectos',
+  title: 'Proyectos que cobran vida.',
+  subtitle: 'Una selección de páginas, sistemas y experiencias digitales que he desarrollado.',
 }

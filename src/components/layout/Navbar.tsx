@@ -39,10 +39,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300',
-        solid
-          ? 'bg-bg/80 shadow-[0_1px_0_rgb(17_17_17/0.06)] backdrop-blur-md'
-          : 'bg-transparent',
+        'fixed inset-x-0 top-0 z-50 border-b border-line bg-surface transition-shadow duration-300',
+        solid && 'shadow-soft',
       )}
     >
       <a
@@ -65,7 +63,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-full px-4 py-2 text-[0.95rem] font-semibold text-ink-soft transition-colors duration-200 hover:bg-surface hover:text-ink"
+                className="rounded-full px-4 py-2 text-[0.95rem] font-semibold text-ink-soft transition-colors duration-200 hover:bg-surface-muted hover:text-ink"
               >
                 {link.label}
               </a>
@@ -100,7 +98,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: EASE_OUT }}
-            className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-bg md:hidden"
+            className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-surface md:hidden"
           >
             <ul className="container-page flex flex-col pt-6">
               {NAV_LINKS.map((link, i) => (

@@ -50,35 +50,33 @@ export const SOCIAL_PROFILES = {
   github: '',
 } as const
 
+/** Identificadores de las secciones a las que apuntan los enlaces internos. */
+export const SECTION_IDS = {
+  top: 'inicio',
+  gallery: 'galeria',
+  about: 'sobre-mi',
+  faq: 'faq',
+  contact: 'contacto',
+} as const
+
 /**
- * Muestra u oculta la sección "Proyectos seleccionados".
- * Al ocultarla también se quitan sus enlaces (navbar, footer y botón del hero).
- * Los proyectos siguen guardados en src/data/projects.ts para cuando quieras mostrarlos.
+ * Muestra u oculta la galería en movimiento "Proyectos que cobran vida".
  */
-export const SHOW_PROJECTS = false
+export const SHOW_PROJECT_GALLERY = true
+
+/**
+ * Destino del enlace "Proyectos" (navbar, footer y botón "Ver proyectos" del hero).
+ * Si la galería está oculta, el enlace desaparece.
+ */
+export const PROJECTS_HREF: `#${string}` | null = SHOW_PROJECT_GALLERY ? `#${SECTION_IDS.gallery}` : null
 
 export type NavLink = {
   label: string
   href: `#${string}`
 }
 
-const ALL_NAV_LINKS: readonly NavLink[] = [
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Sobre mí', href: '#sobre-mi' },
-  { label: 'FAQ', href: '#faq' },
+export const NAV_LINKS: readonly NavLink[] = [
+  ...(PROJECTS_HREF ? [{ label: 'Proyectos', href: PROJECTS_HREF }] : []),
+  { label: 'Sobre mí', href: `#${SECTION_IDS.about}` },
+  { label: 'FAQ', href: `#${SECTION_IDS.faq}` },
 ]
-
-export const NAV_LINKS: readonly NavLink[] = SHOW_PROJECTS
-  ? ALL_NAV_LINKS
-  : ALL_NAV_LINKS.filter((link) => link.href !== '#proyectos')
-
-/** Identificadores de las secciones a las que apuntan los enlaces internos. */
-export const SECTION_IDS = {
-  top: 'inicio',
-  projects: 'proyectos',
-  services: 'servicios',
-  about: 'sobre-mi',
-  faq: 'faq',
-  contact: 'contacto',
-} as const

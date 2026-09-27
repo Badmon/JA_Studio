@@ -1,3 +1,4 @@
+import { existsSync, readdirSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -35,6 +36,39 @@ function siteMetadata(): Plugin {
   }
 }
 
+const PREVIEW_MODULE_ID = 'virtual:preview-projects'
+const PREVIEW_DIR = 'src/assets/preview-projects'
+
+/**
+ * Capturas de ejemplo solo para desarrollo.
+ * Con `npm run dev` expone la lista de imágenes de src/assets/preview-projects (carpeta ignorada por Git),
+ * que el servidor de Vite sirve directamente. En el build devuelve una lista vacía sin leer la carpeta,
+ * así que esas capturas nunca se empaquetan ni se publican.
+ */
+function previewProjects(): Plugin {
+  const resolvedId = `\0${PREVIEW_MODULE_ID}`
+  let isDevServer = false
+
+  return {
+    name: 'preview-projects',
+    configResolved(config) {
+      isDevServer = config.command === 'serve'
+    },
+    resolveId(id) {
+      return id === PREVIEW_MODULE_ID ? resolvedId : undefined
+    },
+    load(id) {
+      if (id !== resolvedId) return undefined
+      if (!isDevServer || !existsSync(PREVIEW_DIR)) return 'export default []'
+      const urls = readdirSync(PREVIEW_DIR)
+        .filter((file) => file.endsWith('.webp'))
+        .sort()
+        .map((file) => `/${PREVIEW_DIR}/${file}`)
+      return `export default ${JSON.stringify(urls)}`
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [siteMetadata(), react(), tailwindcss()],
+  plugins: [siteMetadata(), previewProjects(), react(), tailwindcss()],
 })

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { SECTION_IDS, SHOW_PROJECTS } from '../../data/siteConfig'
+import { PROJECTS_HREF, SECTION_IDS } from '../../data/siteConfig'
 import { heroContent } from '../../data/content'
 import { EASE_OUT, clipReveal, fadeUp, stagger } from '../../lib/motion'
 import { Button } from '../ui/Button'
@@ -9,7 +9,6 @@ import {
   ChartCard,
   DashboardCard,
   MessageBubble,
-  OnlineBadge,
   PhoneCard,
   ProjectMiniCard,
 } from '../hero/FloatingCards'
@@ -24,9 +23,6 @@ function DesktopFloatingElements() {
       </Floating>
       <Floating className="top-[13%] right-[3%] xl:right-[5%]" delay={0.75} duration={6} rotate={3}>
         <ChartCard />
-      </Floating>
-      <Floating className="top-[9%] left-[26%] hidden xl:block" delay={0.9} duration={5}>
-        <OnlineBadge />
       </Floating>
       <Floating className="top-[58%] left-[2%] hidden xl:block" delay={1} duration={8} distance={8}>
         <MessageBubble />
@@ -53,9 +49,6 @@ function CompactFloatingElements() {
       </Floating>
       <Floating className="top-0 right-2 sm:right-6" delay={0.95} duration={6} rotate={6}>
         <PhoneCard />
-      </Floating>
-      <Floating className="bottom-2 left-8" delay={1.1} duration={5.5}>
-        <OnlineBadge />
       </Floating>
     </div>
   )
@@ -106,7 +99,7 @@ export function Hero() {
             {heroContent.primaryCta}
           </Button>
           <Button
-            href={`#${SHOW_PROJECTS ? SECTION_IDS.projects : SECTION_IDS.services}`}
+            href={PROJECTS_HREF ?? `#${SECTION_IDS.about}`}
             size="lg"
             variant="secondary"
           >

@@ -1,74 +1,53 @@
 /**
- * Proyectos del portafolio.
+ * Proyectos de la galería en movimiento ("Proyectos que cobran vida").
  *
- * - `image`: ruta a una captura real (colócala en /public/projects/ y escribe '/projects/mi-imagen.webp').
- *   Mientras esté vacía, se muestra el mockup ilustrado indicado en `mockup`.
- * - `url`: enlace público del proyecto. Si está vacío, el botón invita a pedir una demostración por WhatsApp.
- * - `featured`: solo los proyectos con `true` aparecen en la sección "Proyectos seleccionados".
+ * Campos:
+ * - `image`: captura del proyecto. Guárdala en /public/projects/ y escribe '/projects/mi-captura.webp'.
+ * - `title` y `category`: se muestran al pasar el cursor sobre la tarjeta y describen la imagen.
+ * - `aspectRatio` (opcional): proporción de la tarjeta, por ejemplo '16/10', '4/3' o '3/2'.
+ *   Usa la de tu captura para no recortarla; si no la indicas se usa 16/10.
+ * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
+ * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
  *
- * Los tres proyectos siguientes son ejemplos: reemplázalos por tus trabajos reales.
+ * Los tres proyectos siguientes son ilustraciones de ejemplo: reemplázalos por tus capturas reales.
  */
 
 export type MockupVariant = 'inventory' | 'corporate' | 'management'
 
 export type Project = {
-  id: string
+  id: number
   title: string
   category: string
-  description: string
-  problem: string
-  solution: string
-  result: string
   image: string
   imageAlt?: string
-  mockup: MockupVariant
-  url: string
-  featured: boolean
+  url?: string
+  aspectRatio?: string
+  mockup?: MockupVariant
 }
 
 export const projects: Project[] = [
   {
-    id: 'plataforma-inventario',
+    id: 1,
     title: 'Plataforma de inventario',
     category: 'Sistema web',
-    description:
-      'Una plataforma diseñada para centralizar equipos, proveedores y movimientos de inventario desde un solo lugar.',
-    problem: 'La información se gestionaba en diferentes archivos.',
-    solution: 'Se creó una plataforma centralizada que facilita el registro y consulta de información.',
-    result: 'Mayor organización y menos trabajo manual.',
     image: '',
     mockup: 'inventory',
-    url: '',
-    featured: true,
+    aspectRatio: '16/10',
   },
   {
-    id: 'pagina-corporativa',
+    id: 2,
     title: 'Página corporativa',
     category: 'Página web',
-    description:
-      'Un sitio web profesional para una empresa de servicios que necesitaba transmitir confianza y recibir más consultas.',
-    problem: 'La empresa no tenía presencia digital y dependía solo de recomendaciones.',
-    solution:
-      'Se diseñó un sitio claro y moderno que explica sus servicios y facilita el contacto directo.',
-    result: 'Una imagen más profesional y un nuevo canal para recibir clientes.',
     image: '',
     mockup: 'corporate',
-    url: '',
-    featured: true,
+    aspectRatio: '4/3',
   },
   {
-    id: 'sistema-gestion',
+    id: 3,
     title: 'Sistema de gestión',
     category: 'Herramienta interna',
-    description:
-      'Una herramienta para organizar clientes, pedidos y tareas del equipo con información siempre actualizada.',
-    problem: 'Los pedidos se coordinaban por mensajes y era fácil perder información.',
-    solution:
-      'Se desarrolló un panel donde todo el equipo registra, asigna y sigue cada pedido en tiempo real.',
-    result: 'Menos errores, respuestas más rápidas y un equipo mejor coordinado.',
     image: '',
     mockup: 'management',
-    url: '',
-    featured: true,
+    aspectRatio: '3/2',
   },
 ]
