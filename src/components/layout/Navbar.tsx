@@ -102,7 +102,7 @@ export function Navbar() {
             transition={{ duration: 0.3, ease: EASE_OUT }}
             className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-surface md:hidden"
           >
-            <ul className="container-page flex flex-col pt-6">
+            <ul className="container-page flex flex-col pt-3 sm:pt-6">
               {NAV_LINKS.map((link, i) => (
                 <motion.li
                   key={link.href}
@@ -114,17 +114,24 @@ export function Navbar() {
                   <a
                     href={link.href}
                     onClick={closeMenu}
-                    className="block py-5 text-4xl font-extrabold tracking-tight"
+                    className="block py-3.5 text-2xl font-extrabold tracking-tight sm:py-5 sm:text-4xl"
                   >
                     {link.label}
                   </a>
                 </motion.li>
               ))}
             </ul>
-            <div className="container-page pt-8 pb-10">
-              <Button href={`#${SECTION_IDS.contact}`} onClick={closeMenu} size="lg" withArrow className="w-full">
-                Hablemos
-              </Button>
+            <div className="container-page pt-5 pb-8 sm:pt-8 sm:pb-10">
+              <div className="sm:hidden">
+                <Button href={`#${SECTION_IDS.contact}`} onClick={closeMenu} withArrow className="w-full">
+                  Hablemos
+                </Button>
+              </div>
+              <div className="hidden sm:block">
+                <Button href={`#${SECTION_IDS.contact}`} onClick={closeMenu} size="lg" withArrow className="w-full">
+                  Hablemos
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
