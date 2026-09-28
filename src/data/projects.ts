@@ -41,6 +41,7 @@ export const projects: Project[] = [
     title: 'Hotel Love',
     category: 'Página Web',
     image: '/projects/hotel-love.webp',
+    url: 'https://shotel.netlify.app/',
     imageAlt: 'Página web de Hotel Love: piscina rodeada de palmeras y tumbonas bajo sombrillas al atardecer',
     aspectRatio: '16/10',
   },
