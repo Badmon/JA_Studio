@@ -9,7 +9,7 @@
  * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
  * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
  *
- * Los dos primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
+ * Los cuatro primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
  * para que la galería no se vea vacía. Reemplázalos por tus capturas reales cuando tengas más.
  */
 
@@ -43,6 +43,22 @@ export const projects: Project[] = [
     image: '/projects/hotel-love.webp',
     url: 'https://shotel.netlify.app/',
     imageAlt: 'Página web de Hotel Love: piscina rodeada de palmeras y tumbonas bajo sombrillas al atardecer',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 6,
+    title: 'CRM Clientes',
+    category: 'Sistema Web',
+    image: '/projects/crm-clientes.webp',
+    imageAlt: 'Sistema web CRM Clientes: resumen de la cartera y mapa de Lima con la ubicación de cada cliente',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 7,
+    title: 'Finanzas',
+    category: 'Sistema Web',
+    image: '/projects/finanzas.webp',
+    imageAlt: 'Sistema web de finanzas personales en tema oscuro: ingresos, gastos por categoría, evolución mensual y presupuesto',
     aspectRatio: '16/10',
   },
   {
