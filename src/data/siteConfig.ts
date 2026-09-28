@@ -69,7 +69,7 @@ export const SHOW_PROJECT_GALLERY = true
  * Con false, la galería se mueve siempre y solo muestra las imágenes.
  * Actívala cuando tengas proyectos reales que presentar.
  */
-export const SHOW_PROJECT_DETAILS = false
+export const SHOW_PROJECT_DETAILS = true
 
 /**
  * Muestra u oculta la franja "Empresas con las que he colaborado" (entre "Sobre mí" y FAQ).
