@@ -37,7 +37,7 @@ const firstRow = fillToMinimum(galleryProjects, MIN_CARDS_PER_ROW)
 const secondRow = fillToMinimum([...galleryProjects].reverse(), MIN_CARDS_PER_ROW)
 
 export function ProjectMarquee() {
-  const [paused, setPaused] = useState(false)
+  const [slowed, setSlowed] = useState(false)
 
   if (galleryProjects.length === 0) return null
 
@@ -55,13 +55,13 @@ export function ProjectMarquee() {
       <div className="mt-12 px-2 sm:mt-16 sm:px-4">
         <div
           className="overflow-hidden rounded-[2rem] bg-surface-muted py-6 sm:rounded-[3rem] sm:py-10 lg:py-14"
-          // Solo se detiene al pasar el cursor si se muestran los detalles de cada proyecto.
+          // Solo se ralentiza al pasar el cursor si se muestran los detalles de cada proyecto.
           {...(SHOW_PROJECT_DETAILS
             ? {
-                onMouseEnter: () => setPaused(true),
-                onMouseLeave: () => setPaused(false),
-                onFocus: () => setPaused(true),
-                onBlur: () => setPaused(false),
+                onMouseEnter: () => setSlowed(true),
+                onMouseLeave: () => setSlowed(false),
+                onFocus: () => setSlowed(true),
+                onBlur: () => setSlowed(false),
               }
             : {})}
         >
@@ -70,14 +70,14 @@ export function ProjectMarquee() {
               projects={firstRow}
               direction="left"
               speed={GALLERY_SPEED.firstRow}
-              paused={paused}
+              slowed={slowed}
               label="Galería de proyectos, primera fila"
             />
             <MarqueeRow
               projects={secondRow}
               direction="right"
               speed={GALLERY_SPEED.secondRow}
-              paused={paused}
+              slowed={slowed}
               label="Galería de proyectos, segunda fila"
             />
           </div>

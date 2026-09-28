@@ -65,7 +65,7 @@ export const SHOW_PROJECT_GALLERY = true
 
 /**
  * Interacción de la galería: con true, al pasar el cursor (o mantener pulsada una tarjeta)
- * las filas se detienen y cada tarjeta muestra su título y categoría.
+ * las filas avanzan muy despacio y cada tarjeta muestra su título y categoría.
  * Con false, la galería se mueve siempre y solo muestra las imágenes.
  * Actívala cuando tengas proyectos reales que presentar.
  */

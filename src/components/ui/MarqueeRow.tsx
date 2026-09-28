@@ -19,14 +19,18 @@ export interface MarqueeRowProps {
   direction?: MarqueeDirection
   /** Segundos que tarda un recorrido completo (un grupo de tarjetas). Más alto = más lento. */
   speed?: number
-  /** Pausa la fila frenando suavemente (por ejemplo, al pasar el cursor por la galería). */
-  paused?: boolean
+  /** Ralentiza la fila frenando suavemente (por ejemplo, al pasar el cursor por la galería). */
+  slowed?: boolean
   /** Nombre accesible de la fila. */
   label: string
 }
 
 /** En móvil el movimiento es un poco más lento. */
 const MOBILE_SPEED_FACTOR = 0.75
+
+/** Velocidad relativa al pasar el cursor: la galería sigue moviéndose, muy despacio, en vez de detenerse. */
+const SLOWED_SPEED_FACTOR = 0.12
+
 /** Evita saltos si la pestaña estuvo en segundo plano. */
 const MAX_FRAME_DELTA_MS = 50
 
@@ -37,7 +41,7 @@ const rowGap = 'gap-4 pr-4 sm:gap-6 sm:pr-6 lg:gap-7 lg:pr-7'
  * Renderiza dos copias consecutivas del mismo grupo y mueve el conjunto con translateX;
  * al recorrer exactamente el ancho de un grupo vuelve al inicio, así el salto no se percibe.
  */
-export function MarqueeRow({ projects, direction = 'left', speed = 45, paused = false, label }: MarqueeRowProps) {
+export function MarqueeRow({ projects, direction = 'left', speed = 45, slowed = false, label }: MarqueeRowProps) {
   const reduceMotion = useReducedMotion()
   const isMobile = useMediaQuery('(max-width: 639px)')
   const containerRef = useRef<HTMLDivElement>(null)
@@ -46,12 +50,12 @@ export function MarqueeRow({ projects, direction = 'left', speed = 45, paused = 
   const isInView = useInView(containerRef, { margin: '200px 0px' })
 
   const x = useMotionValue(0)
-  // Factor de velocidad: 1 = en marcha, 0 = detenida. El resorte hace que frene y arranque con suavidad.
+  // Factor de velocidad: 1 = velocidad normal, SLOWED_SPEED_FACTOR = ralentizada. El resorte suaviza el cambio.
   const velocity = useSpring(1, { stiffness: 60, damping: 22 })
 
   useEffect(() => {
-    velocity.set(paused ? 0 : 1)
-  }, [paused, velocity])
+    velocity.set(slowed ? SLOWED_SPEED_FACTOR : 1)
+  }, [slowed, velocity])
 
   useEffect(() => {
     const group = groupRef.current
