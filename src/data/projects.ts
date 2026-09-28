@@ -9,7 +9,8 @@
  * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
  * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
  *
- * Los tres proyectos siguientes son ilustraciones de ejemplo: reemplázalos por tus capturas reales.
+ * El primero es un proyecto real; los tres siguientes son ilustraciones de ejemplo que se mantienen
+ * para que la galería no se vea vacía. Reemplázalos por tus capturas reales cuando tengas más.
  */
 
 export type MockupVariant = 'inventory' | 'corporate' | 'management'
@@ -26,6 +27,15 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    id: 4,
+    title: 'Huella Veterinaria',
+    category: 'Sistema Web',
+    image: '/projects/huella-veterinaria.webp',
+    url: 'https://huellaveterinaria.netlify.app/',
+    imageAlt: 'Página web de Huella, clínica veterinaria en Lima: veterinaria sonriente junto a un golden retriever',
+    aspectRatio: '16/10',
+  },
   {
     id: 1,
     title: 'Plataforma de inventario',
