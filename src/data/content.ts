@@ -73,5 +73,5 @@ export const finalCtaContent = {
 export const galleryContent = {
   eyebrow: 'Proyectos',
   title: 'Proyectos que cobran vida.',
-  subtitle: 'Una selección de páginas, sistemas y experiencias digitales que he desarrollado.',
+  subtitle: 'Una muestra del tipo de páginas, sistemas y experiencias digitales que puedo desarrollar para negocios y proyectos.',
 }
