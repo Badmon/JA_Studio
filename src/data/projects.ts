@@ -9,7 +9,7 @@
  * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
  * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
  *
- * El primero es un proyecto real; los tres siguientes son ilustraciones de ejemplo que se mantienen
+ * Los dos primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
  * para que la galería no se vea vacía. Reemplázalos por tus capturas reales cuando tengas más.
  */
 
@@ -34,6 +34,14 @@ export const projects: Project[] = [
     image: '/projects/huella-veterinaria.webp',
     url: 'https://huellaveterinaria.netlify.app/',
     imageAlt: 'Página web de Huella, clínica veterinaria en Lima: veterinaria sonriente junto a un golden retriever',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 5,
+    title: 'Hotel Love',
+    category: 'Página Web',
+    image: '/projects/hotel-love.webp',
+    imageAlt: 'Página web de Hotel Love: piscina rodeada de palmeras y tumbonas bajo sombrillas al atardecer',
     aspectRatio: '16/10',
   },
   {
