@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: 'Huella Veterinaria',
-    category: 'Sistema Web',
+    category: 'Página Web',
     image: '/projects/huella-veterinaria.webp',
     url: 'https://huellaveterinaria.netlify.app/',
     imageAlt: 'Página web de Huella, clínica veterinaria en Lima: veterinaria sonriente junto a un golden retriever',
