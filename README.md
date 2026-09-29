@@ -156,7 +156,7 @@ El proyecto incluye `netlify.toml` con la configuración necesaria:
 4. Pulsa **Deploy**. Cada `git push` a `main` desplegará una nueva versión automáticamente.
 5. (Opcional) En **Domain management** conecta tu dominio propio y escríbelo en `SITE.url` (`src/data/siteConfig.ts`).
 
-`netlify.toml` también incluye un *fallback* SPA (todas las rutas sirven `index.html`), por si en el futuro se añade React Router, y cabeceras de caché para los archivos estáticos.
+`netlify.toml` también incluye cabeceras de caché para los archivos estáticos. No tiene *fallback* SPA a propósito: el sitio es de una sola página, así que las direcciones inexistentes devuelven un 404 real (mejor para Google). Si en el futuro se añade React Router, habrá que agregarlo.
 
 ---
 
