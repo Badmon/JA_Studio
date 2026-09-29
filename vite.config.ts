@@ -10,9 +10,11 @@ function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
+const SITE_URL = SITE.url.replace(/\/$/, '')
+
 /** Rellena los metadatos de index.html con los datos de src/data/siteConfig.ts. */
 function siteMetadata(): Plugin {
-  const url = SITE.url.replace(/\/$/, '')
+  const url = SITE_URL
   const urlTags = url
     ? [
         `<link rel="canonical" href="${url}/" />`,
@@ -33,6 +35,33 @@ function siteMetadata(): Plugin {
       order: 'pre',
       handler: (html) =>
         Object.entries(values).reduce((result, [token, value]) => result.replaceAll(token, value), html),
+    },
+  }
+}
+
+/**
+ * Genera robots.txt y sitemap.xml en el build a partir de SITE.url, para que Google
+ * encuentre el sitio. Si cambias de dominio, basta con actualizar SITE.url.
+ */
+function seoFiles(): Plugin {
+  return {
+    name: 'seo-files',
+    apply: 'build',
+    generateBundle() {
+      const robots = ['User-agent: *', 'Allow: /', ...(SITE_URL ? ['', `Sitemap: ${SITE_URL}/sitemap.xml`] : [])]
+      this.emitFile({ type: 'asset', fileName: 'robots.txt', source: `${robots.join('\n')}\n` })
+      if (!SITE_URL) return
+      const lastmod = new Date().toISOString().slice(0, 10)
+      const sitemap = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <url>',
+        `    <loc>${SITE_URL}/</loc>`,
+        `    <lastmod>${lastmod}</lastmod>`,
+        '  </url>',
+        '</urlset>',
+      ]
+      this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: `${sitemap.join('\n')}\n` })
     },
   }
 }
@@ -86,5 +115,5 @@ function previewProjects(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [siteMetadata(), previewProjects(), react(), tailwindcss()],
+  plugins: [siteMetadata(), seoFiles(), previewProjects(), react(), tailwindcss()],
 })
