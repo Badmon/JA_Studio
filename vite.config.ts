@@ -4,13 +4,54 @@ import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { SITE, SITE_TITLE } from './src/data/siteConfig.ts'
+import { SITE, SITE_TITLE, SOCIAL_PROFILES, WHATSAPP_NUMBER } from './src/data/siteConfig.ts'
 
 function escapeHtml(value: string): string {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 const SITE_URL = SITE.url.replace(/\/$/, '')
+
+/**
+ * Datos estructurados (schema.org) para Google: quién está detrás del sitio, a qué se dedica,
+ * dónde está y sus perfiles. Solo se generan si hay URL pública.
+ */
+function structuredData(): string {
+  if (!SITE_URL) return ''
+  const data = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: `${SITE_URL}/`,
+        name: SITE_TITLE,
+        description: SITE.description,
+        inLanguage: 'es-PE',
+        publisher: { '@id': `${SITE_URL}/#person` },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${SITE_URL}/#person`,
+        name: SITE.name,
+        jobTitle: SITE.jobTitle,
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}${SITE.photo.src}`,
+        email: `mailto:${SITE.email}`,
+        telephone: `+${WHATSAPP_NUMBER}`,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: SITE.location.city,
+          addressCountry: SITE.location.countryCode,
+        },
+        sameAs: Object.values(SOCIAL_PROFILES).filter((profile) => profile !== ''),
+      },
+    ],
+  }
+  // "<" escapado para que el JSON no pueda cerrar la etiqueta <script>.
+  const json = JSON.stringify(data, null, 2).replace(/</g, '\\u003c')
+  return `<script type="application/ld+json">\n${json}\n    </script>`
+}
 
 /** Rellena los metadatos de index.html con los datos de src/data/siteConfig.ts. */
 function siteMetadata(): Plugin {
@@ -27,6 +68,7 @@ function siteMetadata(): Plugin {
     '%SITE_DESCRIPTION%': escapeHtml(SITE.description),
     '%SITE_OG_IMAGE%': `${url}/og-image.png`,
     '<!-- %SITE_URL_TAGS% -->': urlTags,
+    '<!-- %SITE_JSON_LD% -->': structuredData(),
   }
 
   return {

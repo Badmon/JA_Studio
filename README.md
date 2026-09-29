@@ -89,7 +89,7 @@ Los proyectos se muestran en la **galería en movimiento** "Proyectos que cobran
 >
 > Los tres **proyectos** de `src/data/projects.ts` son ejemplos ilustrativos: reemplázalos por tus trabajos reales.
 
-**SEO:** el título, la descripción y las etiquetas Open Graph de `index.html` se generan al compilar desde `src/data/siteConfig.ts` (no hace falta editar `index.html`). Cuando tengas dominio, escríbelo en `SITE.url` (por ejemplo `'https://juanantonioleon.com'`) y se añadirán la URL canónica y `og:url`. La imagen para redes sociales es `public/og-image.png` (1200×630).
+**SEO:** el título, la descripción y las etiquetas Open Graph de `index.html` se generan al compilar desde `src/data/siteConfig.ts` (no hace falta editar `index.html`). Cuando tengas dominio, escríbelo en `SITE.url` (por ejemplo `'https://juanantonioleon.com'`) y se añadirán la URL canónica y `og:url`. La imagen para redes sociales es `public/og-image.png` (1200×630). Con `SITE.url` definido, el build también genera `robots.txt`, `sitemap.xml` y los datos estructurados (JSON-LD) que usa Google; no hay que editarlos a mano. El dueño del sitio se verifica en Google Search Console con la etiqueta `google-site-verification` de `index.html`.
 
 ## 5. Cambiar WhatsApp
 

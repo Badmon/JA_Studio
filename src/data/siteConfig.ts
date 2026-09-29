@@ -19,6 +19,9 @@ export const SITE = {
   url: 'https://jleonh.netlify.app',
   description:
     'Diseño y desarrollo páginas web, sistemas y soluciones digitales para negocios y empresas.',
+  /** Profesión y ubicación: se usan en los datos estructurados que lee Google. */
+  jobTitle: 'Desarrollador de soluciones digitales',
+  location: { city: 'Lima', countryCode: 'PE' },
   /**
    * Fotografía de perfil (sección "Sobre mí" y bloque de contacto).
    * El archivo vive en /public/images, así que se publica junto al sitio en Netlify.
