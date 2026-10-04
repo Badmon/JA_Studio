@@ -9,7 +9,7 @@
  * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
  * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
  *
- * Los cuatro primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
+ * Los cinco primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
  * para que la galería no se vea vacía. Reemplázalos por tus capturas reales cuando tengas más.
  */
 
@@ -59,6 +59,15 @@ export const projects: Project[] = [
     category: 'Sistema Web',
     image: '/projects/finanzas.webp',
     imageAlt: 'Sistema web de finanzas personales en tema oscuro: ingresos, gastos por categoría, evolución mensual y presupuesto',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 8,
+    title: 'Mublier',
+    category: 'Página Web',
+    image: '/projects/mublier.webp',
+    url: 'https://mublier.com/',
+    imageAlt: 'Página web de Mublier, marketplace de muebles hechos por fabricantes locales: carpintero trabajando la madera en su taller',
     aspectRatio: '16/10',
   },
   {
