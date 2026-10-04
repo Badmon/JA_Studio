@@ -58,7 +58,6 @@ export const technologiesContent = {
 export const faqContent = {
   eyebrow: 'FAQ',
   title: 'Preguntas frecuentes',
-  aside: '¿Tienes otra duda? Escríbeme y te respondo sin compromiso.',
 }
 
 export const finalCtaContent = {

@@ -1,9 +1,7 @@
 import { SECTION_IDS } from '../../data/siteConfig'
 import { faqContent } from '../../data/content'
 import { faqItems } from '../../data/faq'
-import { getWhatsAppLink } from '../../lib/contact'
 import { Accordion } from '../ui/Accordion'
-import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { SectionTitle } from '../ui/SectionTitle'
 
@@ -24,12 +22,6 @@ export function FAQ() {
               title={faqContent.title}
               titleClassName="[&>span]:-mr-[0.15em] [&>span]:pr-[0.15em]"
             />
-            <Reveal delay={0.15} className="mt-8 max-w-sm">
-              <p className="text-ink-soft">{faqContent.aside}</p>
-              <Button href={getWhatsAppLink()} variant="secondary" className="mt-6">
-                Hacer una pregunta
-              </Button>
-            </Reveal>
           </div>
         </div>
         <Reveal className="lg:col-span-7">
