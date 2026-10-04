@@ -8,9 +8,6 @@
  *   Usa la de tu captura para no recortarla; si no la indicas se usa 16/10.
  * - `url` (opcional): enlace público; añade "Ver proyecto →" a la tarjeta.
  * - `mockup` (opcional): ilustración CSS que se muestra mientras no haya `image`.
- *
- * Los cinco primeros son proyectos reales; los tres siguientes son ilustraciones de ejemplo que se mantienen
- * para que la galería no se vea vacía. Reemplázalos por tus capturas reales cuando tengas más.
  */
 
 export type MockupVariant = 'inventory' | 'corporate' | 'management'
@@ -69,29 +66,5 @@ export const projects: Project[] = [
     url: 'https://mublier.com/',
     imageAlt: 'Página web de Mublier, marketplace de muebles hechos por fabricantes locales: carpintero trabajando la madera en su taller',
     aspectRatio: '16/10',
-  },
-  {
-    id: 1,
-    title: 'Plataforma de inventario',
-    category: 'Sistema web',
-    image: '',
-    mockup: 'inventory',
-    aspectRatio: '16/10',
-  },
-  {
-    id: 2,
-    title: 'Página corporativa',
-    category: 'Página web',
-    image: '',
-    mockup: 'corporate',
-    aspectRatio: '4/3',
-  },
-  {
-    id: 3,
-    title: 'Sistema de gestión',
-    category: 'Herramienta interna',
-    image: '',
-    mockup: 'management',
-    aspectRatio: '3/2',
   },
 ]
