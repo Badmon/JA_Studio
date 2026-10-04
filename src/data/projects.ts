@@ -25,6 +25,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 1,
+    title: 'Mublier',
+    category: 'Página Web',
+    image: '/projects/mublier.webp',
+    url: 'https://mublier.com/',
+    imageAlt: 'Página web de Mublier, marketplace de muebles hechos por fabricantes locales: carpintero trabajando la madera en su taller',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 2,
+    title: 'Finanzas',
+    category: 'Sistema Web',
+    image: '/projects/finanzas.webp',
+    imageAlt: 'Sistema web de finanzas personales en tema oscuro: ingresos, gastos por categoría, evolución mensual y presupuesto',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 3,
+    title: 'CRM Clientes',
+    category: 'Sistema Web',
+    image: '/projects/crm-clientes.webp',
+    imageAlt: 'Sistema web CRM Clientes: resumen de la cartera y mapa de Lima con la ubicación de cada cliente',
+    aspectRatio: '16/10',
+  },
+  {
     id: 4,
     title: 'Huella Veterinaria',
     category: 'Página Web',
@@ -40,31 +65,6 @@ export const projects: Project[] = [
     image: '/projects/hotel-love.webp',
     url: 'https://shotel.netlify.app/',
     imageAlt: 'Página web de Hotel Love: piscina rodeada de palmeras y tumbonas bajo sombrillas al atardecer',
-    aspectRatio: '16/10',
-  },
-  {
-    id: 6,
-    title: 'CRM Clientes',
-    category: 'Sistema Web',
-    image: '/projects/crm-clientes.webp',
-    imageAlt: 'Sistema web CRM Clientes: resumen de la cartera y mapa de Lima con la ubicación de cada cliente',
-    aspectRatio: '16/10',
-  },
-  {
-    id: 7,
-    title: 'Finanzas',
-    category: 'Sistema Web',
-    image: '/projects/finanzas.webp',
-    imageAlt: 'Sistema web de finanzas personales en tema oscuro: ingresos, gastos por categoría, evolución mensual y presupuesto',
-    aspectRatio: '16/10',
-  },
-  {
-    id: 8,
-    title: 'Mublier',
-    category: 'Página Web',
-    image: '/projects/mublier.webp',
-    url: 'https://mublier.com/',
-    imageAlt: 'Página web de Mublier, marketplace de muebles hechos por fabricantes locales: carpintero trabajando la madera en su taller',
     aspectRatio: '16/10',
   },
 ]
