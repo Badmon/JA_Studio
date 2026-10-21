@@ -11,7 +11,7 @@ export const SITE = {
   title: 'Soluciones Digitales',
   email: 'jantoleonh@gmail.com',
   /** Teléfono tal como se muestra en pantalla. */
-  phoneDisplay: '+51 928 357 588',
+  phoneDisplay: '+51 938 629 083',
   /**
    * URL pública del sitio, sin barra final (por ejemplo 'https://juanantonioleon.com').
    * Cuando la tengas, escríbela aquí: se usará para la URL canónica y las etiquetas Open Graph.
@@ -42,7 +42,7 @@ export const SITE_TITLE = `JL | ${SITE.title}`
  * Número de WhatsApp en formato internacional: código de país + número, solo dígitos.
  * Perú = 51.
  */
-export const WHATSAPP_NUMBER = '51928357588'
+export const WHATSAPP_NUMBER = '51938629083'
 
 export const WHATSAPP_DEFAULT_MESSAGE = `Hola ${SITE.firstName}, vi tu portafolio y quisiera conversar contigo sobre un proyecto.`
 

@@ -96,11 +96,11 @@ Los proyectos se muestran en la **galería en movimiento** "Proyectos que cobran
 En `src/data/siteConfig.ts`:
 
 ```ts
-export const WHATSAPP_NUMBER = '51928357588' // código de país (Perú = 51) + número, solo dígitos
+export const WHATSAPP_NUMBER = '51938629083' // código de país (Perú = 51) + número, solo dígitos
 export const WHATSAPP_DEFAULT_MESSAGE = `Hola ${SITE.firstName}, vi tu portafolio y quisiera conversar contigo sobre un proyecto.`
 ```
 
-El número que se muestra en pantalla es `SITE.phoneDisplay` (`'+51 928 357 588'`).
+El número que se muestra en pantalla es `SITE.phoneDisplay` (`'+51 938 629 083'`).
 
 Todos los botones de WhatsApp del sitio usan la función `getWhatsAppLink()` de `src/lib/contact.ts`, así que basta con cambiarlo en un solo lugar. 
 
