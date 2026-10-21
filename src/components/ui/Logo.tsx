@@ -3,12 +3,14 @@ import { cn } from '../../lib/cn'
 
 type LogoProps = {
   tone?: 'dark' | 'light'
+  /** Muestra el nombre junto al logo. Con false queda solo la J. */
+  showName?: boolean
   className?: string
   onClick?: () => void
 }
 
 /** Marca del sitio: logo J + nombre. */
-export function Logo({ tone = 'dark', className, onClick }: LogoProps) {
+export function Logo({ tone = 'dark', showName = true, className, onClick }: LogoProps) {
   return (
     <a
       href={`#${SECTION_IDS.top}`}
@@ -29,7 +31,7 @@ export function Logo({ tone = 'dark', className, onClick }: LogoProps) {
         <path d="M1053 243L751 240L274 567L581 565Z" />
         <path d="M936 773L673 940L542 1016L535 1023L536 1030L541 1033L756 1033L936 914Z" />
       </svg>
-      <span className={cn('text-lg', tone === 'dark' ? 'text-ink' : 'text-white')}>{SITE.name}</span>
+      {showName && <span className={cn('text-lg', tone === 'dark' ? 'text-ink' : 'text-white')}>{SITE.name}</span>}
     </a>
   )
 }

@@ -57,7 +57,7 @@ export function Navbar() {
           solid ? 'h-16' : 'h-20',
         )}
       >
-        <Logo onClick={closeMenu} />
+        <Logo showName={false} onClick={closeMenu} />
 
         <ul className="mr-3 ml-auto hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
