@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Post Facebook — Proyecto realizado: Mublier</title>
+<style>
+  @font-face { font-family: 'Manrope Variable'; src: url('../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2'); font-weight: 200 800; }
+  :root { --bg:#121211; --ink:#f4f3ef; --soft:#b9b6ae; --muted:#928f88; --accent:#c2e66e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--bg); }
+  body { position: relative; font-family: 'Manrope Variable', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .abs { position: absolute; }
+  .bigj { left: 380px; top: 380px; width: 760px; height: 774px; fill: rgb(194 230 110 / .16); }
+
+  .eyebrow { left: 64px; top: 92px; display: flex; align-items: center; gap: 16px; font-size: 24px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); }
+  .eyebrow i { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 7px rgb(194 230 110 / .3); }
+  h1 { left: 64px; top: 138px; font-size: 150px; line-height: 1; letter-spacing: -.05em; font-weight: 800; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { left: 64px; top: 308px; font-size: 46px; font-weight: 600; letter-spacing: -.02em; color: var(--soft); }
+
+  .laptop { left: 56px; top: 440px; width: 904px; }
+  .screen { background: #111; border-radius: 28px 28px 8px 8px; padding: 16px 16px 22px; box-shadow: 0 0 0 1px rgb(244 243 239 / .12), 0 28px 60px -22px rgb(0 0 0 / .7); }
+  .screen img { display: block; width: 872px; height: 545px; object-fit: cover; object-position: top; border-radius: 10px; }
+  .base { margin: 0 -22px; height: 26px; background: linear-gradient(#3a3a36, #2a2a27); border-radius: 0 0 34px 34px; position: relative; box-shadow: 0 26px 40px -16px rgb(0 0 0 / .7); }
+  .base::before { content: ''; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 160px; height: 9px; background: #1c1c1a; border-radius: 0 0 12px 12px; }
+
+  .phone { left: 770px; top: 560px; width: 250px; padding: 9px; border-radius: 42px; background: #111; box-shadow: 0 0 0 1px rgb(244 243 239 / .2), 0 36px 64px -16px rgb(0 0 0 / .85); }
+  .phone .scr { position: relative; padding: 34px 0 16px; border-radius: 34px; overflow: hidden; background: #151412; }
+  .phone .scr img { display: block; width: 100%; height: 470px; object-fit: cover; object-position: top; }
+  .phone .notch { position: absolute; left: 50%; top: 11px; transform: translateX(-50%); width: 70px; height: 10px; border-radius: 99px; background: #111; }
+
+  .brand { left: 64px; bottom: 54px; display: flex; align-items: center; gap: 16px; font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
+  .mark { width: 58px; height: 58px; border-radius: 16px; background: var(--ink); display: grid; place-items: center; }
+  .mark svg { width: 32px; height: 32px; fill: var(--bg); }
+</style>
+</head>
+<body>
+  <svg class="abs bigj" viewBox="274 240 779 793"><path d="M905 376L729 489L728 763L711 810L671 849L631 864L552 864L553 679L374 697L303 749L497 941L615 942L659 927L906 755Z"/><path d="M1053 243L751 240L274 567L581 565Z"/><path d="M936 773L673 940L542 1016L535 1023L536 1030L541 1033L756 1033L936 914Z"/></svg>
+
+  <p class="abs eyebrow"><i></i>Proyecto realizado</p>
+  <h1 class="abs">Mublier<em>.com</em></h1>
+  <p class="abs sub">Diseño y desarrollo web</p>
+
+  <div class="abs laptop">
+    <div class="screen"><img src="../../public/projects/mublier.webp" alt="" /></div>
+    <div class="base"></div>
+  </div>
+  <div class="abs phone">
+    <div class="scr"><img src="../facebook-ad/mublier-mobile.jpg" alt="" /><div class="notch"></div></div>
+  </div>
+
+  <div class="abs brand"><div class="mark"><svg viewBox="274 240 779 793"><path d="M905 376L729 489L728 763L711 810L671 849L631 864L552 864L553 679L374 697L303 749L497 941L615 942L659 927L906 755Z"/><path d="M1053 243L751 240L274 567L581 565Z"/><path d="M936 773L673 940L542 1016L535 1023L536 1030L541 1033L756 1033L936 914Z"/></svg></div>JL Soluciones Digitales</div>
+</body>
+</html>
