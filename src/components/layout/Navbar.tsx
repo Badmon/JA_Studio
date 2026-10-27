@@ -40,8 +40,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 border-b border-line bg-surface transition-shadow duration-300',
-        solid && 'shadow-soft',
+        'fixed inset-x-0 top-0 z-50 border-b border-ink/15 bg-surface/90 shadow-soft backdrop-blur-md transition-shadow duration-300',
+        solid && 'shadow-float',
       )}
     >
       <a

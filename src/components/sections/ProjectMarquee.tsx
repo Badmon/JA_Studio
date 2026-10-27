@@ -42,7 +42,7 @@ export function ProjectMarquee() {
   if (galleryProjects.length === 0) return null
 
   return (
-    <section id={SECTION_IDS.gallery} aria-labelledby="gallery-title" className="bg-surface py-8 lg:py-14">
+    <section id={SECTION_IDS.gallery} aria-labelledby="gallery-title" className="py-8 lg:py-14">
       <div className="container-page">
         <SectionTitle
           id="gallery-title"

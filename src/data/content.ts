@@ -69,8 +69,17 @@ export const finalCtaContent = {
   emailSubject: 'Quiero contarte sobre mi proyecto',
 }
 
+export const proposalsContent = {
+  eyebrow: 'Propuestas',
+  title: 'Así podría verse tu negocio',
+  subtitle:
+    'Explora nuestras propuestas web, diseñadas para inspirarte y mostrarte todo lo que podemos crear para tu marca.',
+  badge: 'Demo',
+  allCta: 'Ver todas las propuestas',
+}
+
 export const galleryContent = {
   eyebrow: 'Proyectos',
-  title: 'Proyectos que cobran vida.',
+  title: 'Proyectos desarrollados.',
   subtitle: 'Una muestra del tipo de páginas, sistemas y experiencias digitales que puedo desarrollar para negocios y proyectos.',
 }

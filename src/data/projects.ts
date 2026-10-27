@@ -1,5 +1,5 @@
 /**
- * Proyectos de la galería en movimiento ("Proyectos que cobran vida").
+ * Proyectos de la galería en movimiento ("Proyectos desarrollados").
  *
  * Campos:
  * - `image`: captura del proyecto. Guárdala en /public/projects/ y escribe '/projects/mi-captura.webp'.

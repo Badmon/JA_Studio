@@ -56,13 +56,14 @@ export const SOCIAL_PROFILES = {
 export const SECTION_IDS = {
   top: 'inicio',
   gallery: 'galeria',
+  proposals: 'propuestas',
   about: 'sobre-mi',
   faq: 'faq',
   contact: 'contacto',
 } as const
 
 /**
- * Muestra u oculta la galería en movimiento "Proyectos que cobran vida".
+ * Muestra u oculta la galería en movimiento "Proyectos desarrollados".
  */
 export const SHOW_PROJECT_GALLERY = true
 
@@ -87,12 +88,19 @@ export const SHOW_COMPANIES = false
  */
 export const PROJECTS_HREF: `#${string}` | null = SHOW_PROJECT_GALLERY ? `#${SECTION_IDS.gallery}` : null
 
+/**
+ * Sitio de las propuestas de páginas web (demos con datos de ejemplo, no proyectos entregados).
+ * Sin barra final. Cada rubro vive en una ruta propia (/restaurante, /ferreteria, /perfumes).
+ */
+export const PROPOSALS_URL = 'https://jl-propuestas.netlify.app'
+
 export type NavLink = {
   label: string
   href: `#${string}`
 }
 
 export const NAV_LINKS: readonly NavLink[] = [
+  { label: 'Propuestas', href: `#${SECTION_IDS.proposals}` },
   ...(PROJECTS_HREF ? [{ label: 'Proyectos', href: PROJECTS_HREF }] : []),
   { label: 'Sobre mí', href: `#${SECTION_IDS.about}` },
   { label: 'FAQ', href: `#${SECTION_IDS.faq}` },

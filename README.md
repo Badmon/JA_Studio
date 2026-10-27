@@ -50,7 +50,7 @@ src/
 
 ## 3. Modificar proyectos
 
-Los proyectos se muestran en la **galería en movimiento** "Proyectos que cobran vida.": capturas en dos filas que se desplazan solas. Los datos están en `src/data/projects.ts`. Para ocultar la galería, cambia `SHOW_PROJECT_GALLERY` a `false` en `src/data/siteConfig.ts` (también se quita el enlace "Proyectos" de la navbar, el footer y el hero).
+Los proyectos se muestran en la **galería en movimiento** "Proyectos desarrollados.": capturas en dos filas que se desplazan solas. Los datos están en `src/data/projects.ts`. Para ocultar la galería, cambia `SHOW_PROJECT_GALLERY` a `false` en `src/data/siteConfig.ts` (también se quita el enlace "Proyectos" de la navbar, el footer y el hero).
 
 ### Agregar una captura a la galería
 

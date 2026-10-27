@@ -9,6 +9,7 @@ import { FinalCTA } from './components/sections/FinalCTA'
 import { Hero } from './components/sections/Hero'
 import { Process } from './components/sections/Process'
 import { ProjectMarquee } from './components/sections/ProjectMarquee'
+import { Proposals } from './components/sections/Proposals'
 import { Technologies } from './components/sections/Technologies'
 import { Testimonials } from './components/sections/Testimonials'
 
@@ -19,6 +20,7 @@ export default function App() {
       <Navbar />
       <main id="contenido">
         <Hero />
+        <Proposals />
         {SHOW_PROJECT_GALLERY && <ProjectMarquee />}
         <Benefits />
         <Process />
