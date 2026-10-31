@@ -97,10 +97,12 @@ export const PROPOSALS_URL = 'https://jl-propuestas.netlify.app'
 export type NavLink = {
   label: string
   href: `#${string}`
+  /** Muestra un punto de color junto al enlace para llamar la atención. */
+  highlight?: boolean
 }
 
 export const NAV_LINKS: readonly NavLink[] = [
-  { label: 'Propuestas', href: `#${SECTION_IDS.proposals}` },
+  { label: 'Propuestas', href: `#${SECTION_IDS.proposals}`, highlight: true },
   ...(PROJECTS_HREF ? [{ label: 'Proyectos', href: PROJECTS_HREF }] : []),
   { label: 'Sobre mí', href: `#${SECTION_IDS.about}` },
   { label: 'FAQ', href: `#${SECTION_IDS.faq}` },

@@ -12,6 +12,16 @@ import { ThemeToggle } from '../ui/ThemeToggle'
 
 const MOBILE_MENU_ID = 'mobile-menu'
 
+/** Punto de acento junto a un enlace destacado; late unas veces al cargar y se queda quieto. */
+function HighlightDot() {
+  return (
+    <span aria-hidden="true" className="relative ml-2 inline-flex size-2 align-middle">
+      <span className="absolute inset-0 rounded-full bg-accent-strong opacity-0 animate-nav-ping" />
+      <span className="relative size-2 rounded-full bg-accent-strong" />
+    </span>
+  )
+}
+
 export function Navbar() {
   const scrolled = useScrolled()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -67,6 +77,7 @@ export function Navbar() {
                 className="rounded-full px-4 py-2 text-[0.95rem] font-semibold text-ink-soft transition-colors duration-200 hover:bg-surface-muted hover:text-ink"
               >
                 {link.label}
+                {link.highlight && <HighlightDot />}
               </a>
             </li>
           ))}
@@ -117,6 +128,7 @@ export function Navbar() {
                     className="block py-3.5 text-2xl font-extrabold tracking-tight sm:py-5 sm:text-4xl"
                   >
                     {link.label}
+                    {link.highlight && <HighlightDot />}
                   </a>
                 </motion.li>
               ))}

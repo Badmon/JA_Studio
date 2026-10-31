@@ -105,6 +105,8 @@
     0 18px 40px -18px rgb(var(--shadow-color) / calc(0.22 * var(--shadow-strength)));
 
   --animate-marquee: marquee 40s linear infinite;
+  /* Latido del punto de "Propuestas" en el navbar: 3 veces al cargar y se detiene. */
+  --animate-nav-ping: nav-ping 1.6s ease-out 0.8s 3 forwards;
 
   @keyframes marquee {
     from {
@@ -112,6 +114,18 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes nav-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    80%,
+    100% {
+      transform: scale(2.6);
+      opacity: 0;
     }
   }
 }
@@ -223,7 +237,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-nav-ping {
     animation: none !important;
   }
 }
