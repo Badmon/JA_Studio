@@ -87,7 +87,7 @@ export function Hero() {
           variants={fadeUp}
           className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center"
         >
-          <Button href={`#${SECTION_IDS.contact}`} size="lg" withArrow>
+          <Button href={`#${SECTION_IDS.proposals}`} size="lg" withArrow>
             {heroContent.primaryCta}
           </Button>
           <Button

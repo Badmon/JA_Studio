@@ -9,7 +9,7 @@ export const heroContent = {
   titleLines: ['Creo soluciones', 'digitales que hacen', 'crecer tu negocio.'],
   subtitle:
     'Diseño y desarrollo páginas web, sistemas y herramientas digitales pensadas para ayudarte a mostrar mejor tu negocio, organizar procesos y crecer.',
-  primaryCta: 'Cuéntame tu proyecto',
+  primaryCta: 'Ver demos',
   /** Botón secundario: lleva a la galería de proyectos si está visible; si no, a "Sobre mí". */
   secondaryCta: PROJECTS_HREF ? 'Ver proyectos' : 'Conocer más',
 }
